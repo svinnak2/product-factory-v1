@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Purpose: validates persona-data-access-map artifacts produced/consumed by the Product Factory.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "mappings"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "mappings": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

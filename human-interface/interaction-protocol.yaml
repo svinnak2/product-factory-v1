@@ -1,0 +1,31 @@
+# Purpose: Canonical state/event semantics for communication between AI-PDLC factories and humans.
+schema_version: "1.0"
+event_types:
+  - WORKFLOW_STARTED
+  - STAGE_STARTED
+  - STAGE_PROGRESS
+  - TASK_STARTED
+  - TASK_PROGRESS
+  - TASK_COMPLETED
+  - INFORMATION_REQUESTED
+  - WARNING_RAISED
+  - BLOCKER_RAISED
+  - DECISION_REQUIRED
+  - ARTIFACT_READY_FOR_REVIEW
+  - APPROVAL_REQUIRED
+  - HUMAN_FEEDBACK_RECEIVED
+  - ARTIFACT_APPROVED
+  - CHANGES_REQUESTED
+  - ARTIFACT_REJECTED
+  - WORKFLOW_PAUSED
+  - WORKFLOW_RESUMED
+  - ESCALATION_REQUIRED
+  - WORKFLOW_COMPLETED
+severity: [INFO, WARNING, BLOCKER, DECISION_REQUIRED, APPROVAL_REQUIRED, ESCALATION_REQUIRED]
+workflow_states: [NOT_STARTED, RUNNING, PAUSED_WAITING_FOR_HUMAN, PAUSED_BLOCKED, REWORK, ESCALATED, COMPLETED, CANCELLED]
+rules:
+  - "Factories MUST emit stage/task progress at meaningful transitions; they MUST NOT simulate progress with arbitrary timers."
+  - "Unknown information MUST retain an evidence state; agents MUST NOT fabricate missing facts."
+  - "A BLOCKER, DECISION_REQUIRED or APPROVAL_REQUIRED event pauses affected progression until resolved."
+  - "Warnings may allow continued work only when the affected policy/artifact permits assumptions or NOT_MEASURED/UNKNOWN values."
+  - "Every human response MUST be correlated to the initiative and triggering interaction."

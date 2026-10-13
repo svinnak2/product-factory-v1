@@ -1,0 +1,16 @@
+# Purpose: Defines business-level persona data-access intent; Security/IAM owns technical enforcement.
+schema_version: "1.0"
+mappings:
+  - persona_id: ""
+    data_object: ""
+    access_actions: []
+    access_scope: ""
+    ownership_rule: ""
+    relationship_rule: ""
+    tenant_boundary: ""
+    sensitive_data: false
+    business_reason: ""
+    related_features: []
+    related_use_cases: []
+    related_requirements: []
+    evidence_status: UNKNOWN

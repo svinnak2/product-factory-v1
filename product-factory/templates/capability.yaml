@@ -1,0 +1,10 @@
+# Purpose: Defines a stable product capability that groups related features.
+schema_version: "1.0"
+capability:
+  capability_id: ""
+  name: ""
+  description: ""
+  objective_ids: []
+  use_case_ids: []
+  feature_ids: []
+  status: DRAFT

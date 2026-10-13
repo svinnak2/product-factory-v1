@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Purpose: validates remediation-request artifacts produced/consumed by the Product Factory.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "remediation"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "remediation": {
+      "type": "object",
+      "required": [
+        "finding_id",
+        "severity",
+        "issue",
+        "responsible_agent_or_team"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

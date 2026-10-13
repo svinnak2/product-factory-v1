@@ -1,0 +1,10 @@
+# Purpose: Records a product risk, impact, mitigation and ownership.
+schema_version: "1.0"
+risk:
+  risk_id: ""
+  description: ""
+  likelihood: null
+  impact: null
+  mitigation: ""
+  owner: ""
+  status: OPEN

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Purpose: validates product-review artifacts produced/consumed by the Product Factory.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "review"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "review": {
+      "type": "object",
+      "required": [
+        "review_id",
+        "initiative_id",
+        "status"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

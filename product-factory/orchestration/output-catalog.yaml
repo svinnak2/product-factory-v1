@@ -1,0 +1,28 @@
+# Purpose: Authoritative Product Factory output catalog, ownership and dependency graph.
+schema_version: "1.0"
+outputs:
+  PRODUCT_CHARTER: {owner: product-lead, depends_on: []}
+  PRODUCT_BRIEF: {owner: product-lead, depends_on: [PRODUCT_CHARTER]}
+  PERSONAS: {owner: product-discovery, depends_on: [PRODUCT_BRIEF]}
+  PAIN_POINT_ANALYSIS: {owner: product-discovery, depends_on: [PERSONAS]}
+  USE_CASES: {owner: product-discovery, depends_on: [PAIN_POINT_ANALYSIS]}
+  PRODUCT_CAPABILITIES: {owner: requirements, depends_on: [USE_CASES]}
+  PRODUCT_FEATURES: {owner: requirements, depends_on: [PRODUCT_CAPABILITIES]}
+  PRD: {owner: requirements, depends_on: [PRODUCT_FEATURES]}
+  REQUIREMENTS: {owner: requirements, depends_on: [PRD]}
+  USER_STORIES: {owner: requirements, depends_on: [REQUIREMENTS]}
+  ACCEPTANCE_CRITERIA: {owner: requirements, depends_on: [USER_STORIES]}
+  WORKFLOWS: {owner: workflow-journey, depends_on: [USE_CASES, PRODUCT_FEATURES]}
+  PERSONA_FEATURE_MAP: {owner: product-discovery, depends_on: [PERSONAS, PRODUCT_FEATURES]}
+  PERSONA_DATA_ACCESS_MAP: {owner: product-discovery, depends_on: [PERSONAS, PRODUCT_FEATURES]}
+  HUMAN_SYSTEM_AI_RESPONSIBILITY_MAP: {owner: ai-product-strategy, depends_on: [WORKFLOWS]}
+  AI_AGENT_UI_FEATURE_MAP: {owner: workflow-journey, depends_on: [WORKFLOWS, HUMAN_SYSTEM_AI_RESPONSIBILITY_MAP]}
+  KPI_FRAMEWORK: {owner: product-analytics, depends_on: [PRODUCT_FEATURES, PRD]}
+  RISK_REGISTER: {owner: product-lead, depends_on: [PRD]}
+  ASSUMPTION_REGISTER: {owner: product-lead, depends_on: [PRD]}
+  DEPENDENCY_REGISTER: {owner: product-lead, depends_on: [PRD]}
+  PRTM: {owner: requirements, depends_on: [REQUIREMENTS, ACCEPTANCE_CRITERIA, WORKFLOWS, KPI_FRAMEWORK]}
+  CHANGE_IMPACT_ANALYSIS: {owner: product-review-routing, depends_on: []}
+  PRODUCT_REVIEW_REPORT: {owner: product-review-routing, depends_on: [PRD, PRTM, KPI_FRAMEWORK, RISK_REGISTER]}
+  DOWNSTREAM_ROUTING_PLAN: {owner: product-review-routing, depends_on: [PRODUCT_REVIEW_REPORT]}
+  PRODUCT_PACKAGE: {owner: product-lead, depends_on: [PRD, PRTM, DOWNSTREAM_ROUTING_PLAN]}

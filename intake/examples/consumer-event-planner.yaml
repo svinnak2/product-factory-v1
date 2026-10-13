@@ -1,0 +1,12 @@
+schema_version: "1.0"
+initiative:
+  initiative_id: INIT-EVENT-PLANNER-001
+  title: Personal Event Planning Assistant
+  initiative_type: NEW_PRODUCT
+  development_context: PRODUCT_CREATION
+  problem_or_opportunity: People coordinating personal events often manage tasks, vendors, budgets and guest information across disconnected tools.
+  desired_outcome: Create a product that helps users organize event planning activities and maintain a coherent plan.
+  known_users: [Event organizer]
+  known_constraints: []
+  supporting_artifacts: []
+  submitted_by: test-owner

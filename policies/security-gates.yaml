@@ -1,0 +1,18 @@
+# Purpose: Common security gates that translate platform policies into lifecycle enforcement.
+schema_version: "1.0"
+gates:
+  - id: SECURITY-DESIGN-READY
+    stage: DESIGN
+    mandatory_evidence: [security_requirements, threat_model, authorization_model, data_classification]
+  - id: SECURITY-BUILD-READY
+    stage: BUILD
+    mandatory_evidence: [sast_results, dependency_scan, secret_scan, iac_scan, sbom_draft, provenance_record]
+  - id: SECURITY-VERIFY-READY
+    stage: VERIFY
+    mandatory_evidence: [security_test_results, api_security_results, applicable_asvs_results]
+    conditional_evidence:
+      ai_enabled: [ai_threat_model, agent_permission_matrix, ai_security_eval_results]
+  - id: SECURITY-RELEASE-READY
+    stage: RELEASE
+    mandatory_evidence: [final_sbom, release_provenance, vulnerability_disposition, approved_exceptions]
+outcomes: [PASS, PASS_WITH_CONDITIONS, FAIL, NEEDS_INFORMATION, NOT_APPLICABLE]

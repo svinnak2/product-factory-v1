@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Human Interaction Audit Record",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "interaction_id",
+    "interaction_type",
+    "timestamp",
+    "actor",
+    "actor_type",
+    "initiative_id",
+    "session_id",
+    "immutable"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "interaction_id": {
+      "type": "string"
+    },
+    "interaction_type": {
+      "enum": [
+        "ARTIFACT_APPROVAL",
+        "BUSINESS_REQUIREMENT_INPUT",
+        "BUSINESS_REQUIREMENT_QUESTION",
+        "QUESTION_ANSWERED",
+        "CLARIFICATION_PROVIDED",
+        "BUSINESS_DECISION",
+        "SCOPE_DECISION",
+        "CONSTRAINT_PROVIDED",
+        "ASSUMPTION_CONFIRMED",
+        "RISK_DECISION",
+        "PRIORITY_DECISION",
+        "HUMAN_DIRECTION"
+      ]
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "asked_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "answered_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "actor": {
+      "type": "string"
+    },
+    "actor_type": {
+      "const": "HUMAN"
+    },
+    "initiative_id": {
+      "type": "string"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "artifact_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "artifact_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "approval_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "question_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "question": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "response": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "text": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "classification": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "supersedes_interaction_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "immutable": {
+      "const": true
+    }
+  },
+  "additionalProperties": true
+}

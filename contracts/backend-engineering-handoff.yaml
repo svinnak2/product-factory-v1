@@ -1,0 +1,18 @@
+# Purpose: Product Factory handoff contract to canonical `engineering-factory` for the backend engineering concern.
+schema_version: '1.0'
+contract:
+  id: product-factory-to-engineering-factory-backend-engineering
+  source: product-factory
+  target: engineering-factory
+required_fields:
+- product_id
+- initiative_id
+- requirements
+- business_rules
+- workflows
+- acceptance_criteria
+validation:
+  reject_if:
+  - missing_required_information
+  - unresolved_critical_product_decision
+  - unowned_blocking_assumption

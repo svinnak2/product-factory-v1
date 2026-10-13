@@ -1,0 +1,17 @@
+# Purpose: Machine-readable independent Product Review result.
+schema_version: "1.0"
+review:
+  review_id: ""
+  initiative_id: ""
+  product_id: ""
+  initiative_type: ""
+  baseline_ref: null
+  status: NEEDS_INFORMATION
+  artifacts_reviewed: []
+  findings: []
+  conditions: []
+  routing: []
+  audit:
+    ruleset_version: "1.0"
+    artifact_refs: []
+    reviewer_agent_version: "1.0.0"

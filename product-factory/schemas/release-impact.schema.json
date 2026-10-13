@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Purpose: validates release-impact artifacts produced/consumed by the Product Factory.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "release_impact"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "release_impact": {
+      "type": "object",
+      "required": [
+        "product_id",
+        "initiative_id",
+        "summary"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

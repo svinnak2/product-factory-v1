@@ -1,0 +1,19 @@
+# Purpose: Product Factory handoff contract to canonical `quality-engineering-factory` for the testing concern.
+schema_version: '1.0'
+contract:
+  id: product-factory-to-quality-engineering-factory-testing
+  source: product-factory
+  target: quality-engineering-factory
+required_fields:
+- product_id
+- initiative_id
+- requirements
+- acceptance_criteria
+- workflows
+- failure_scenarios
+- compatibility_expectations
+validation:
+  reject_if:
+  - missing_required_information
+  - unresolved_critical_product_decision
+  - unowned_blocking_assumption

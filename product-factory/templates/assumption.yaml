@@ -1,0 +1,9 @@
+# Purpose: Records an unvalidated assumption with owner and validation plan.
+schema_version: "1.0"
+assumption:
+  assumption_id: ""
+  statement: ""
+  impact_if_wrong: ""
+  owner: ""
+  validation_plan: ""
+  status: OPEN

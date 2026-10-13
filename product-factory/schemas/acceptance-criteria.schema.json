@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Purpose: validates acceptance-criteria artifacts produced/consumed by the Product Factory.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "acceptance_criteria"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "acceptance_criteria": {
+      "type": "object",
+      "required": [
+        "acceptance_criteria_id",
+        "requirement_id"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,11 @@
+# Purpose: Delta-path readiness gate for capabilities, features and existing-product changes.
+schema_version: "2.0"
+gate_id: change-readiness
+applies_to: [NEW_CAPABILITY, NEW_FEATURE, PRODUCT_CHANGE]
+required_checks: [approved_baseline_identified, current_vs_proposed_delta, change_impact, affected_artifacts_updated, acceptance_criteria, traceability, downstream_routing]
+conditional_checks:
+  ai_review: {required_when: ai_behavior_change}
+  access_review: {required_when: authorization_or_data_access_change}
+  docs_training: {required_when: user_visible_or_workflow_change}
+  compatibility: {required_when: contract_or_behavior_change}
+outcomes: [PASS, PASS_WITH_CONDITIONS, FAIL, NEEDS_INFORMATION, NOT_APPLICABLE]

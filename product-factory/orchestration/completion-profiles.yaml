@@ -1,0 +1,43 @@
+# Purpose: Deterministic definition of when Product Factory work is complete.
+schema_version: "1.0"
+profiles:
+  PRODUCT_CREATION:
+    required_outputs:
+      - PRODUCT_CHARTER
+      - PRODUCT_BRIEF
+      - PERSONAS
+      - PAIN_POINT_ANALYSIS
+      - USE_CASES
+      - PRODUCT_CAPABILITIES
+      - PRODUCT_FEATURES
+      - PRD
+      - REQUIREMENTS
+      - USER_STORIES
+      - ACCEPTANCE_CRITERIA
+      - WORKFLOWS
+      - PERSONA_FEATURE_MAP
+      - PERSONA_DATA_ACCESS_MAP
+      - HUMAN_SYSTEM_AI_RESPONSIBILITY_MAP
+      - AI_AGENT_UI_FEATURE_MAP
+      - KPI_FRAMEWORK
+      - RISK_REGISTER
+      - ASSUMPTION_REGISTER
+      - DEPENDENCY_REGISTER
+      - PRTM
+      - PRODUCT_REVIEW_REPORT
+      - DOWNSTREAM_ROUTING_PLAN
+      - PRODUCT_PACKAGE
+  PRODUCT_EVOLUTION:
+    required_outputs:
+      - CHANGE_IMPACT_ANALYSIS
+    dynamic_rule: "After approved change-impact analysis, add all affected governed outputs plus DOWNSTREAM_ROUTING_PLAN and PRODUCT_PACKAGE."
+completion_checks:
+  - latest_required_artifact_exists
+  - latest_required_artifact_schema_valid
+  - latest_required_artifact_human_approved
+  - no_open_blocker
+  - no_open_required_decision
+  - no_pending_required_approval
+  - final_product_review_passed
+  - downstream_routing_plan_approved
+  - product_package_approved

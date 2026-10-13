@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Purpose: validates workflow artifacts produced/consumed by the Product Factory.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "workflow"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "workflow": {
+      "type": "object",
+      "required": [
+        "workflow_id",
+        "title",
+        "trigger"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

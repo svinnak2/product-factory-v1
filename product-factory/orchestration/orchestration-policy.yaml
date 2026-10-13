@@ -1,0 +1,18 @@
+# Purpose: Declares the mandatory six orchestration modes and common semantics for this factory.
+schema_version: "1.0"
+orchestration:
+  supported_modes: [FORWARD, BACKWARD, PARALLEL, CONDITIONAL, REWORK, ESCALATION]
+  rules:
+    FORWARD: "Advance to the next eligible activity/gate/handoff when prerequisites pass."
+    BACKWARD: "Return to an earlier lifecycle stage when upstream definition must change."
+    PARALLEL: "Execute independent work concurrently; join only when declared dependencies are satisfied."
+    CONDITIONAL: "Activate work/routes/gates only when machine-readable conditions are true."
+    REWORK: "Return a finding to its authoritative artifact owner, update the artifact, then re-enter review."
+    ESCALATION: "Pause affected work and request an authorized human or governing authority decision when agent authority is insufficient."
+  invariants:
+    - no_silent_gap_filling
+    - no_self_approval
+    - preserve_traceability
+    - record_transition_reason
+    - record_actor_and_evidence
+    - resume_from_recorded_checkpoint

@@ -1,0 +1,66 @@
+schema_version: '1.0'
+owner: product-lead
+protocol: ../../human-interface/interaction-protocol.yaml
+requirements:
+  continuous_status:
+    required: true
+    emit_on:
+    - workflow_start
+    - stage_change
+    - task_start
+    - meaningful_task_progress
+    - task_completion
+    - artifact_generation
+    - review_start
+    - human_wait
+    - rework
+    - escalation
+    - workflow_completion
+  missing_information:
+    evidence_states:
+    - VALIDATED
+    - PARTIALLY_VALIDATED
+    - ASSUMPTION
+    - HYPOTHESIS
+    - UNKNOWN
+    - NOT_MEASURED
+    - DECISION
+    behavior:
+      non_blocking: Raise WARNING, identify impact, preserve UNKNOWN/NOT_MEASURED/ASSUMPTION,
+        and continue only when policy permits.
+      blocking: Raise BLOCKER or DECISION_REQUIRED, ask a specific question, persist
+        checkpoint and pause.
+  human_response:
+    on_answer: RESUME_FROM_CHECKPOINT
+    on_no_answer: REMAIN_PAUSED
+  prohibited:
+  - Fabricating missing business facts, evidence, metrics, approvals or decisions.
+  - Treating silence as approval.
+  - Continuing past a mandatory approval gate.
+audit_trail:
+  required: true
+  store: human-interactions.jsonl
+  append_only: true
+  system_timestamp_utc: true
+  capture:
+  - ARTIFACT_APPROVAL
+  - BUSINESS_REQUIREMENT_INPUT
+  - BUSINESS_REQUIREMENT_QUESTION
+  - QUESTION_ANSWERED
+  - CLARIFICATION_PROVIDED
+  - BUSINESS_DECISION
+  - SCOPE_DECISION
+  - CONSTRAINT_PROVIDED
+  - ASSUMPTION_CONFIRMED
+  - RISK_DECISION
+  - PRIORITY_DECISION
+  - HUMAN_DIRECTION
+  exclude_from_general_interaction_category:
+  - CHANGES_REQUESTED
+  - REJECTED
+  question_timestamps:
+  - asked_at
+  - answered_at
+  approval_timestamp: decided_at
+  supersession: Never overwrite a prior human decision; append a new interaction with
+    supersedes_interaction_id.

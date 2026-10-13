@@ -1,0 +1,20 @@
+# Purpose: Fast-path gate for development and operational defect classification/routing.
+schema_version: "2.0"
+gate_id: defect-routing
+applies_to: [DEFECT]
+required_checks: [defect_origin, expected_behavior_reference, observed_behavior, evidence, defect_classification]
+conditional_checks:
+  operational_evidence: {required_when: "defect_origin == OPERATIONS"}
+  ai_regression_assurance: {required_when: "classification == AI_BEHAVIOR_DEFECT OR affected_ai_behavior == true"}
+rules:
+  IMPLEMENTATION_DEFECT: [backend-engineering-team, testing-team]
+  PRODUCT_DEFINITION_DEFECT: [product-team]
+  AI_BEHAVIOR_DEFECT: [agentic-ai-engineering-team, testing-team, assurance-team, observability-team]
+  UX_DEFECT: [ux-team, ui-team, testing-team]
+  DATA_DEFECT: [data-team, testing-team]
+  CONFIGURATION_DEFECT: [backend-engineering-team, release-team]
+  INTEGRATION_DEFECT: [api-team, backend-engineering-team, testing-team]
+  UNKNOWN: [investigation]
+operational_defaults:
+  include_observability_evidence: true
+  consider_support_and_release_impact: true

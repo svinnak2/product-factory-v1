@@ -1,0 +1,27 @@
+# Purpose: Structured Product input for release notes, help, training, support and release planning.
+schema_version: "1.0"
+release_impact:
+  product_id: ""
+  initiative_id: ""
+  target_version: null
+  user_visible: false
+  summary: ""
+  affected_personas: []
+  new_features: []
+  changed_features: []
+  removed_features: []
+  workflow_changes: []
+  configuration_changes: []
+  installation_changes: []
+  permissions_changes: []
+  api_changes: []
+  known_limitations: []
+  documentation:
+    release_notes: NOT_REQUIRED
+    user_guide: NOT_REQUIRED
+    administrator_guide: NOT_REQUIRED
+    installation_guide: NOT_REQUIRED
+  training:
+    end_user_training: NOT_REQUIRED
+    administrator_training: NOT_REQUIRED
+    learning_objectives: []

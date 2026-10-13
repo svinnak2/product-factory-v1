@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Product Definition Blocker Resolution Result",
+  "type": "object",
+  "required": ["resolution_status", "resolution_summary", "authoritative_business_rules", "acceptance_intent", "human_decisions", "downstream_dependencies", "evidence_refs"],
+  "properties": {
+    "resolution_status": {"enum": ["RESOLVED", "HUMAN_DECISION_REQUIRED"]},
+    "resolution_summary": {"type": ["string", "null"]},
+    "authoritative_business_rules": {"type": "array"},
+    "acceptance_intent": {"type": "array"},
+    "human_decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["question", "reason"],
+        "properties": {
+          "question": {"type": "string", "minLength": 1},
+          "recommendation": {},
+          "options": {"type": "array"},
+          "reason": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "downstream_dependencies": {"type": "array"},
+    "evidence_refs": {"type": "array"}
+  },
+  "additionalProperties": true
+}

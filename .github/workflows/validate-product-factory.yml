@@ -1,0 +1,13 @@
+name: Validate AI-PDLC Platform
+on: [pull_request, push]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -r requirements-ci.txt
+      - run: python scripts/validate_platform.py
+      - run: python tests/test_runtime_v61.py
+      - run: python -m py_compile cli/ai_pdlc.py runtime/orchestrator/product.py runtime/adapters/*.py runtime/stores/*.py runtime/validators/*.py

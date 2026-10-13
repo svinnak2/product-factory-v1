@@ -1,0 +1,15 @@
+# Purpose: Controls safe parallel execution and join behavior.
+schema_version: "1.0"
+rules:
+  - group: product-definition-specialists
+    members: [requirements, workflow-journey, ai-product-strategy, product-analytics]
+    start_when: discovery_baseline_available
+    join_before: PRODUCT_REVIEW
+    conflict_resolution: product-lead
+  - group: downstream-routing
+    members: dynamic_from_routing_decision
+    start_when: individual_handoff_ready
+    join_before: parent_factory_defined_gate
+constraints:
+  shared_artifact_concurrent_write: forbidden
+  authoritative_owner_wins: true

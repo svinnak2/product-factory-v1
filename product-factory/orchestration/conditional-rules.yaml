@@ -1,0 +1,10 @@
+# Purpose: Standard conditional activation rules.
+schema_version: "1.0"
+conditions:
+  ai_work_required: "ai_enabled == true OR ai_behavior_change == true"
+  access_work_required: "authorization_change == true OR persona_data_scope_change == true"
+  full_discovery_required: "initiative_type == NEW_PRODUCT"
+  delta_analysis_required: "initiative_type in [NEW_CAPABILITY, NEW_FEATURE, PRODUCT_CHANGE]"
+  defect_path_required: "initiative_type == DEFECT"
+  operational_evidence_required: "initiative_type == DEFECT AND defect_origin == OPERATIONS"
+  assurance_route_required: "ai_behavior_change == true OR ai_agent_new == true OR ai_autonomy_change == true"

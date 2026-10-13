@@ -1,0 +1,18 @@
+# Purpose: Product Factory handoff contract to canonical `documentation-enablement-factory` for the documentation concern.
+schema_version: '1.0'
+contract:
+  id: product-factory-to-documentation-enablement-factory-documentation
+  source: product-factory
+  target: documentation-enablement-factory
+required_fields:
+- product_id
+- initiative_id
+- release_impact
+- user_visible_changes
+- affected_personas
+- known_limitations
+validation:
+  reject_if:
+  - missing_required_information
+  - unresolved_critical_product_decision
+  - unowned_blocking_assumption

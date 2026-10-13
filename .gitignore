@@ -1,0 +1,33 @@
+.venv/
+.runtime/
+__pycache__/
+*.pyc
+.env
+.env.*
+.DS_Store
+
+# Python virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Node dependencies
+node_modules/
+
+# macOS files
+.DS_Store
+
+# Local runtime
+.runtime/
+
+# Temporary backups
+.patch-backups/
+*.pre-timeout-recovery
+*.pre-v6.*

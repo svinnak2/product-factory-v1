@@ -1,0 +1,11 @@
+# Purpose: Records evidence-based downstream factory routes and dependencies.
+schema_version: "1.0"
+routing_decision:
+  initiative_id: ""
+  routes:
+    - team: ""
+      reasons: []
+      handoff_contract: ""
+      dependency_mode: IN_PARALLEL
+      blocked: false
+      blocking_findings: []

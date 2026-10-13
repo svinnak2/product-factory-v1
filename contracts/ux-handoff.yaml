@@ -1,0 +1,19 @@
+# Purpose: Product Factory handoff contract to canonical `experience-factory` for the ux concern.
+schema_version: '1.0'
+contract:
+  id: product-factory-to-experience-factory-ux
+  source: product-factory
+  target: experience-factory
+required_fields:
+- product_id
+- initiative_id
+- personas
+- workflows
+- features
+- interaction_requirements
+- ai_ui_mapping
+validation:
+  reject_if:
+  - missing_required_information
+  - unresolved_critical_product_decision
+  - unowned_blocking_assumption

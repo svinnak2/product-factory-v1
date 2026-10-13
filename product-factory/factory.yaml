@@ -1,0 +1,49 @@
+# Purpose: Product Factory executable manifest within AI-PDLC-Platform.
+schema_version: '2.0'
+factory:
+  id: product-factory
+  type: product-definition-orchestration
+  registry: registry.yaml
+  team_charter: TEAM.md
+  intake:
+    rules: intake/intake-rules.yaml
+    initiative_types: intake/initiative-types.yaml
+    template: templates/product-initiative.yaml
+    schema: schemas/product-initiative.schema.json
+  routing:
+    rules: routing/routing-rules.yaml
+    impact_rules: routing/impact-rules.yaml
+  gates:
+  - gates/product-readiness.yaml
+  - gates/change-readiness.yaml
+  - gates/defect-routing.yaml
+  contracts_directory: ../contracts
+  templates_directory: templates
+  schemas_directory: schemas
+  examples_directory: examples
+  orchestration:
+    policy: orchestration/orchestration-policy.yaml
+    transitions: orchestration/transitions.yaml
+    parallelization: orchestration/parallelization-rules.yaml
+    conditions: orchestration/conditional-rules.yaml
+    rework: orchestration/rework-policy.yaml
+    escalation: orchestration/escalation-policy.yaml
+    event_schema: orchestration/orchestration-event.schema.json
+  parent: ai-pdlc-factory
+  factory_type: Lifecycle
+  lifecycle_stage: 1. Discover & Define
+  shared_platform: shared-assets-registries-platform
+  platform_topology: ../platform/ai-pdlc-factory-topology.yaml
+  shared_orchestration_contract: ../orchestration/PARENT_AI_PDLC_CONTRACT.md
+  policies_directory: ../policies
+  human_interface_protocol: ../human-interface/interaction-protocol.yaml
+  initiative_intake_schema: ../intake/product-initiative.schema.json
+  development_contexts:
+  - PRODUCT_CREATION
+  - PRODUCT_EVOLUTION
+  human_approval_default: REQUIRED_FOR_GOVERNED_OUTPUTS
+  runtime: ../runtime
+  output_catalog: orchestration/output-catalog.yaml
+  completion_profiles: orchestration/completion-profiles.yaml
+  executable: true
+  runtime_version: '6.0'

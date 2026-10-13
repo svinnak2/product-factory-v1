@@ -1,0 +1,14 @@
+# Purpose: Defines an evidence-linked product use case.
+schema_version: "1.0"
+use_case:
+  use_case_id: ""
+  title: ""
+  persona_ids: []
+  objective: ""
+  trigger: ""
+  preconditions: []
+  main_flow: []
+  alternate_flows: []
+  outcomes: []
+  pain_point_ids: []
+  evidence_status: UNKNOWN

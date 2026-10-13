@@ -1,0 +1,17 @@
+# Purpose: Allowed Product Factory lifecycle transitions, including forward, backward, parallel, conditional, rework and escalation.
+schema_version: "1.0"
+transitions:
+  - {id: intake-to-discovery, mode: FORWARD, from: INTAKE, to: DISCOVERY, when: intake_valid}
+  - {id: discovery-to-definition, mode: FORWARD, from: DISCOVERY, to: PRODUCT_DEFINITION, when: discovery_sufficient}
+  - id: specialist-fanout
+    mode: PARALLEL
+    from: DISCOVERY
+    to: [requirements, workflow-journey, ai-product-strategy, product-analytics]
+    when: dependencies_satisfied
+  - {id: ai-conditional, mode: CONDITIONAL, from: PRODUCT_DEFINITION, to: ai-product-strategy, when: ai_enabled_or_ai_change}
+  - {id: access-conditional, mode: CONDITIONAL, from: PRODUCT_DEFINITION, to: product-discovery, when: persona_or_data_access_change}
+  - {id: review-backward, mode: BACKWARD, from: PRODUCT_REVIEW, to: PRODUCT_DEFINITION, when: upstream_definition_change_required}
+  - {id: review-rework, mode: REWORK, from: PRODUCT_REVIEW, to: responsible_artifact_owner, when: finding_requires_remediation}
+  - {id: human-escalation, mode: ESCALATION, from: ANY, to: AUTHORIZED_HUMAN, when: material_human_decision_required}
+  - {id: review-forward, mode: FORWARD, from: PRODUCT_REVIEW, to: DOWNSTREAM_ROUTING, when: gate_pass_or_allowed_conditions}
+  - {id: operations-return, mode: BACKWARD, from: OPERATIONAL_DEFECT_INTAKE, to: DEFECT_TRIAGE, when: production_issue_received}

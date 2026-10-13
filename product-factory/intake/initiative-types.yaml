@@ -1,0 +1,22 @@
+# Purpose: Canonical AI-PDLC-compatible initiative taxonomy for full, delta, feature, and defect paths.
+schema_version: "2.0"
+initiative_types:
+  NEW_PRODUCT:
+    path: FULL_PRODUCT_PATH
+    description: Brand-new product.
+  NEW_CAPABILITY:
+    path: CAPABILITY_DELTA_PATH
+    description: New broad product capability, potentially containing multiple features.
+  NEW_FEATURE:
+    path: FEATURE_DELTA_PATH
+    description: New bounded feature within an existing capability/product.
+  PRODUCT_CHANGE:
+    path: PRODUCT_DELTA_PATH
+    description: Change to existing approved product behavior not better classified above.
+  DEFECT:
+    path: DEFECT_FAST_PATH
+    description: Deviation from expected/approved behavior; origin is separately classified.
+defect_origins:
+  DEVELOPMENT: Bug discovered during product development before operational release.
+  OPERATIONS: Bug discovered after release from production/operational evidence.
+defect_classifications: [IMPLEMENTATION_DEFECT, PRODUCT_DEFINITION_DEFECT, AI_BEHAVIOR_DEFECT, UX_DEFECT, DATA_DEFECT, CONFIGURATION_DEFECT, INTEGRATION_DEFECT, UNKNOWN]

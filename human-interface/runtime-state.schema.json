@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Purpose: minimum durable workflow state needed to pause/resume and audit human interaction.",
+  "type": "object",
+  "required": [
+    "initiative_id",
+    "factory_id",
+    "workflow_state",
+    "stage",
+    "updated_at"
+  ],
+  "properties": {
+    "initiative_id": {
+      "type": "string"
+    },
+    "factory_id": {
+      "type": "string"
+    },
+    "workflow_state": {
+      "type": "string"
+    },
+    "stage": {
+      "type": "string"
+    },
+    "task": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "active_agent": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "pending_approvals": {
+      "type": "array"
+    },
+    "open_questions": {
+      "type": "array"
+    },
+    "open_alerts": {
+      "type": "array"
+    },
+    "checkpoint_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

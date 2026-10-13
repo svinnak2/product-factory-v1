@@ -1,0 +1,22 @@
+# Platform-facing registration; the executable internal manifest remains product-factory/factory.yaml.
+factory_id: factory.product-factory
+interface_version: 0.1.0
+owner_role_ref: policies/platform/roles.yaml#/roles/scoped-factory-owner
+owner_scope:
+  factory_id: factory.product-factory
+  domain: product-definition
+  declared_authority: Product Factory methods and outputs only; no platform governance, business acceptance, or release authority.
+capabilities:
+  - capability_id: capability.product-definition
+    supported_work_types:
+      - new-product
+      - new-capability
+      - new-feature
+      - development-defect
+      - operations-defect
+    inputs:
+      - contract_id: contract.platform.execution-request
+        versions: [0.1.0]
+    outputs:
+      - contract_id: contract.platform.execution-result
+        versions: [0.1.0]

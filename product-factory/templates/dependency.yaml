@@ -1,0 +1,9 @@
+# Purpose: Records a product dependency and its effect on delivery/readiness.
+schema_version: "1.0"
+dependency:
+  dependency_id: ""
+  description: ""
+  owner: ""
+  depends_on: ""
+  impact: ""
+  status: OPEN

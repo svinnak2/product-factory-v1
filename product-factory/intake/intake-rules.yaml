@@ -1,0 +1,14 @@
+# Purpose: Minimum intake, lifecycle selection and proportional-governance rules.
+schema_version: "2.0"
+minimum_required: [initiative_id, title, initiative_type, problem_or_opportunity, desired_outcome]
+initiative_types: [NEW_PRODUCT, NEW_CAPABILITY, NEW_FEATURE, PRODUCT_CHANGE, DEFECT]
+defect_requirements:
+  required_when_defect: [defect_origin]
+  allowed_origins: [DEVELOPMENT, OPERATIONS]
+optional_context: [known_users, known_pain_points, qualitative_evidence, quantitative_evidence, existing_workflows, existing_systems, constraints, policies, data, integrations, ai_opportunities, risks, timeline, supporting_documents, stakeholders]
+rules:
+  - missing_optional_context: DISCOVER_OR_MARK_UNKNOWN
+  - missing_material_business_decision: ESCALATE
+  - do_not_require_prd_at_intake: true
+  - do_not_assume_proposed_technology_is_mandatory_unless_marked_constraint: true
+  - operational_defect_requires_production_evidence_or_reference: true

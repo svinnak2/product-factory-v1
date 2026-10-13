@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Purpose: common metadata for Product Factory governed outputs and human approval state.",
+  "type": "object",
+  "required": [
+    "artifact_id",
+    "artifact_type",
+    "version",
+    "status",
+    "initiative_id",
+    "owner_agent"
+  ],
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "artifact_type": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "DRAFT",
+        "GENERATING",
+        "GENERATED",
+        "INTERNAL_REVIEW",
+        "HUMAN_REVIEW_REQUIRED",
+        "APPROVED",
+        "CHANGES_REQUESTED",
+        "REJECTED",
+        "REWORK",
+        "SUPERSEDED"
+      ]
+    },
+    "initiative_id": {
+      "type": "string"
+    },
+    "owner_agent": {
+      "type": "string"
+    },
+    "content_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "approval_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "supersedes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

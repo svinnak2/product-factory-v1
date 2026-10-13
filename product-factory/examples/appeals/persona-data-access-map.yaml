@@ -1,0 +1,16 @@
+# Purpose: Example business-level access intent; not an IAM implementation.
+schema_version: "1.0"
+mappings:
+  - persona_id: appeals-director
+    data_object: AppealCase
+    access_actions: [VIEW, REVIEW]
+    access_scope: TEAM
+    ownership_rule: ""
+    relationship_rule: "May access cases assigned to members of teams the director is authorized to oversee."
+    tenant_boundary: "Remain within authorized tenant unless an approved cross-tenant requirement exists."
+    sensitive_data: true
+    business_reason: "Provide authorized team workload and case-status oversight."
+    related_features: [FEAT-TEAM-APPEALS-VIEW]
+    related_use_cases: [UC-TEAM-OVERSIGHT]
+    related_requirements: [APL-SEC-021]
+    evidence_status: ASSUMPTION

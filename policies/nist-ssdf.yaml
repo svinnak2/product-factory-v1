@@ -1,0 +1,44 @@
+# Purpose: AI-PDLC secure-software-development policy aligned to NIST SP 800-218 SSDF and informed by SP 800-218A for GenAI.
+schema_version: "1.0"
+policy_id: POL-SSDF
+scope: ALL_FACTORIES
+authority:
+  - NIST_SP_800_218
+  - NIST_SP_800_218A
+requirements:
+  - id: SSDF-PO-01
+    level: MUST
+    rule: "Security requirements, responsibilities, approvals and evidence expectations shall be defined and maintained across the lifecycle."
+    evidence: [security_requirements, ownership_record, gate_evidence]
+  - id: SSDF-PO-02
+    level: MUST
+    rule: "Development, build, test and release environments shall use approved tools, protected configurations and least-privilege access."
+    evidence: [tool_inventory, environment_controls, access_review]
+  - id: SSDF-PS-01
+    level: MUST
+    rule: "Source, build artifacts, dependencies, models, prompts, agent definitions and release artifacts shall be protected from unauthorized modification."
+    evidence: [repository_controls, artifact_integrity, provenance]
+  - id: SSDF-PS-02
+    level: MUST
+    rule: "Software and AI-component provenance shall be recorded sufficiently to reproduce and investigate releases."
+    evidence: [build_provenance, dependency_lock, model_or_agent_version]
+  - id: SSDF-PW-01
+    level: MUST
+    rule: "Security and privacy requirements shall be incorporated into architecture, design, implementation and verification."
+    evidence: [threat_model, security_design, verification_results]
+  - id: SSDF-PW-02
+    level: MUST
+    rule: "Code, infrastructure-as-code, APIs and AI/agent integrations shall undergo automated and risk-based manual security verification."
+    evidence: [sast_results, dependency_scan, secret_scan, iac_scan, api_security_results]
+  - id: SSDF-PW-03
+    level: MUST
+    rule: "Secrets shall not be committed to source; secrets shall be managed through approved secret-management mechanisms."
+    evidence: [secret_scan, secret_management_reference]
+  - id: SSDF-RV-01
+    level: MUST
+    rule: "Vulnerabilities and security defects shall be triaged, remediated or formally risk-accepted; root causes shall feed preventive improvements."
+    evidence: [vulnerability_record, remediation_or_exception, root_cause]
+gating:
+  design: [SSDF-PW-01]
+  build: [SSDF-PO-02, SSDF-PS-01, SSDF-PW-02, SSDF-PW-03]
+  release: [SSDF-PS-02, SSDF-RV-01]

@@ -1,0 +1,27 @@
+# Purpose: API security policy aligned to the OWASP API Security Top 10.
+schema_version: "1.0"
+policy_id: POL-OWASP-API
+scope: APIS_AND_WEB_SERVICES
+requirements:
+  - id: API-01
+    level: MUST
+    rule: "Every API operation shall authenticate and authorize callers as required, including object-, property- and function-level authorization."
+  - id: API-02
+    level: MUST
+    rule: "APIs shall validate input, constrain output/data exposure and enforce tenant/ownership/relationship boundaries."
+  - id: API-03
+    level: MUST
+    rule: "Resource consumption shall be bounded to reduce abuse and denial-of-service risk."
+  - id: API-04
+    level: MUST
+    rule: "Sensitive business flows shall include abuse-case analysis and controls against automated misuse where applicable."
+  - id: API-05
+    level: MUST
+    rule: "API inventory, version, ownership and exposure shall be maintained; obsolete or unmanaged endpoints shall not remain silently exposed."
+  - id: API-06
+    level: MUST
+    rule: "Outbound consumption of third-party APIs/data shall use validation, allowlisting/policy and safe failure handling appropriate to risk."
+  - id: API-07
+    level: MUST
+    rule: "Authentication, authorization, abuse, error and security-relevant API events shall be observable without leaking secrets or sensitive payloads."
+evidence: [openapi_contract, api_inventory, authorization_tests, abuse_tests, security_scan, telemetry_definition]

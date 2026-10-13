@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Purpose: validates product-initiative artifacts produced/consumed by the Product Factory.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "initiative"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "initiative": {
+      "type": "object",
+      "required": [
+        "initiative_id",
+        "title",
+        "initiative_type",
+        "problem_or_opportunity",
+        "desired_outcome"
+      ],
+      "properties": {
+        "initiative_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "initiative_type": {
+          "enum": [
+            "NEW_PRODUCT",
+            "NEW_CAPABILITY",
+            "NEW_FEATURE",
+            "PRODUCT_CHANGE",
+            "DEFECT"
+          ]
+        },
+        "problem_or_opportunity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "desired_outcome": {
+          "type": "string",
+          "minLength": 1
+        },
+        "defect_origin": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "DEVELOPMENT",
+            "OPERATIONS",
+            null
+          ]
+        },
+        "approved_baseline_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "production_evidence_refs": {
+          "type": "array"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "initiative_type": {
+                "const": "DEFECT"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "defect_origin"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "additionalProperties": true
+}

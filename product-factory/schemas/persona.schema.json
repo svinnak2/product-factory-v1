@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Purpose: validates persona artifacts produced/consumed by the Product Factory.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "persona"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "persona": {
+      "type": "object",
+      "required": [
+        "persona_id",
+        "name",
+        "evidence_status"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

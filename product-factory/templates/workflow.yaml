@@ -1,0 +1,13 @@
+# Purpose: Defines an end-to-end product workflow including user, system, AI and HILT actions.
+schema_version: "1.0"
+workflow:
+  workflow_id: ""
+  title: ""
+  persona_ids: []
+  trigger: ""
+  preconditions: []
+  steps: []
+  alternate_paths: []
+  failure_paths: []
+  completion_state: ""
+  requirement_ids: []

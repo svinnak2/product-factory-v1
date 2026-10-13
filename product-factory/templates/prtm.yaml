@@ -1,0 +1,23 @@
+# Purpose: Living Product Requirements Traceability Matrix/graph view; downstream factories may enrich authorized fields.
+schema_version: "1.0"
+traceability:
+  - business_objective_id: ""
+    product_outcome_ids: []
+    pain_point_ids: []
+    persona_ids: []
+    user_need_ids: []
+    use_case_ids: []
+    capability_id: ""
+    feature_id: ""
+    requirement_id: ""
+    workflow_ids: []
+    acceptance_criteria_ids: []
+    kpi_ids: []
+    architecture_decision_ids: []
+    implementation_component_ids: []
+    test_case_ids: []
+    security_control_ids: []
+    assurance_evaluation_ids: []
+    observability_signal_ids: []
+    release_evidence_ids: []
+    production_outcome_ids: []

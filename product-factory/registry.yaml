@@ -1,0 +1,85 @@
+# Purpose: Machine-readable catalog for Product Factory agent discovery and ownership.
+schema_version: '1.0'
+team:
+  id: product-factory
+  name: Product Factory Team
+  parent: ai-pdlc-factory
+  orchestrator: product-lead
+  reviewer: product-review-routing
+agents:
+- id: product-lead
+  path: agents/product-lead/AGENT.md
+  skills: agents/product-lead/SKILLS.md
+  role: orchestrator
+  owns:
+  - intake
+  - initiative-classification
+  - scope
+  - orchestration
+  - change-impact
+  - decisions
+  delegates_to:
+  - product-discovery
+  - requirements
+  - workflow-journey
+  - ai-product-strategy
+  - product-analytics
+- id: product-discovery
+  path: agents/product-discovery/AGENT.md
+  skills: agents/product-discovery/SKILLS.md
+  role: specialist
+  owns:
+  - personas
+  - pain-points
+  - user-needs
+  - use-cases
+  - persona-feature-map
+  - persona-data-access-map
+- id: requirements
+  path: agents/requirements/AGENT.md
+  skills: agents/requirements/SKILLS.md
+  role: specialist
+  owns:
+  - pdr
+  - capabilities
+  - features
+  - requirements
+  - acceptance-criteria
+  - prtm
+- id: workflow-journey
+  path: agents/workflow-journey/AGENT.md
+  skills: agents/workflow-journey/SKILLS.md
+  role: specialist
+  owns:
+  - journeys
+  - workflows
+  - exceptions
+  - ai-ui-feature-map
+- id: ai-product-strategy
+  path: agents/ai-product-strategy/AGENT.md
+  skills: agents/ai-product-strategy/SKILLS.md
+  role: specialist
+  owns:
+  - ai-suitability
+  - ai-use-cases
+  - autonomy
+  - hilt
+  - responsibility-map
+- id: product-analytics
+  path: agents/product-analytics/AGENT.md
+  skills: agents/product-analytics/SKILLS.md
+  role: specialist
+  owns:
+  - kpis
+  - product-events
+  - measurement-plan
+  - outcome-monitoring
+- id: product-review-routing
+  path: agents/product-review-routing/AGENT.md
+  skills: agents/product-review-routing/SKILLS.md
+  role: independent-reviewer
+  owns:
+  - product-review
+  - routing-decision
+  - remediation-request
+  - handoff-readiness

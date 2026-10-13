@@ -1,0 +1,30 @@
+# Purpose: Software supply-chain, SBOM and build-integrity policy aligned to CISA secure-software/SBOM guidance.
+schema_version: "1.0"
+policy_id: POL-SUPPLY
+scope: ALL_SOFTWARE_AND_AI_RELEASES
+requirements:
+  - id: SSC-01
+    level: MUST
+    rule: "Third-party software dependencies shall be inventoried, version-pinned/locked where feasible and continuously assessed for known risk."
+  - id: SSC-02
+    level: MUST
+    rule: "A machine-readable SBOM shall be generated for releasable software artifacts using an approved interoperable format and retained with release evidence."
+  - id: SSC-03
+    level: MUST
+    rule: "SBOM records shall identify components with sufficient supplier/name/version/relationship information to support vulnerability and impact analysis."
+  - id: SSC-04
+    level: MUST
+    rule: "Build pipelines shall protect source-to-artifact integrity and record provenance for released artifacts."
+  - id: SSC-05
+    level: MUST
+    rule: "Dependencies, build actions and release artifacts shall be scanned for vulnerabilities, malicious/unapproved components, secrets and integrity issues."
+  - id: SSC-06
+    level: MUST
+    rule: "Critical/high-risk findings shall be remediated or covered by an approved, time-bound exception before release."
+  - id: SSC-07
+    level: MUST
+    rule: "AI dependencies shall include relevant model/provider/version, agent/tool/plugin and prompt/configuration provenance where applicable."
+  - id: SSC-08
+    level: SHOULD
+    rule: "Artifact signing and verification should be used for production release artifacts where supported."
+evidence: [sbom, dependency_inventory, provenance, scan_results, artifact_signature_or_exception]

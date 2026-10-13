@@ -1,0 +1,13 @@
+# Purpose: Defines a product feature and its business/user justification.
+schema_version: "1.0"
+feature:
+  feature_id: ""
+  capability_id: ""
+  name: ""
+  description: ""
+  persona_ids: []
+  use_case_ids: []
+  requirement_ids: []
+  priority: null
+  rationale: ""
+  status: DRAFT

@@ -1,0 +1,19 @@
+# Purpose: Example Human/System/AI responsibility allocation for document classification.
+schema_version: "1.0"
+capabilities:
+  - capability_id: CAP-DOC-INTELLIGENCE
+    workflow_id: WF-DOC-CLASSIFICATION
+    activities:
+      - activity_id: ACT-DOC-CLASSIFY
+        activity: Classify appeal document
+        primary_responsibility: SHARED_AI_SYSTEM
+        ai_responsibilities: [analyze_document_content, propose_document_type, produce_confidence]
+        system_responsibilities: [validate_output_schema, evaluate_configured_policy, persist_approved_result]
+        human_responsibilities: [review_uncertain_result, correct_classification]
+        autonomy_level: L2
+        human_review_required: true
+        approval_required: false
+        override_allowed: true
+        escalation_conditions: [LOW_CONFIDENCE, UNKNOWN_DOCUMENT_TYPE, INVALID_OUTPUT]
+        rationale: "AI proposes classification; deterministic controls and human exception handling constrain execution."
+        risks: []

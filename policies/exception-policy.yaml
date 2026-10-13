@@ -1,0 +1,21 @@
+# Purpose: Governed exception process for mandatory platform security controls.
+schema_version: "1.0"
+requirements:
+  - "Exceptions MUST identify the exact control, affected product/artifact, risk, rationale, compensating controls, approver, owner and expiration."
+  - "Exceptions MUST be time-bound and reviewed before expiration."
+  - "BLOCKER findings cannot be bypassed without the authority defined by Governance & Compliance."
+  - "Expired exceptions automatically become unresolved findings."
+  - "Exceptions do not alter the underlying policy or erase original evidence/findings."
+template:
+  exception_id: ""
+  control_id: ""
+  product_id: ""
+  artifact_or_scope: ""
+  risk_statement: ""
+  rationale: ""
+  compensating_controls: []
+  owner: ""
+  approver: ""
+  approved_at: null
+  expires_at: null
+  status: REQUESTED

@@ -1,0 +1,24 @@
+# Purpose: Durable pause/resume semantics for human-dependent Product Factory work.
+schema_version: "1.0"
+checkpoint_on:
+  - BLOCKER
+  - DECISION_REQUIRED
+  - APPROVAL_REQUIRED
+  - ESCALATION_REQUIRED
+checkpoint_fields:
+  - initiative_id
+  - workflow_id
+  - stage
+  - task
+  - active_agent
+  - triggering_interaction_id
+  - completed_artifacts
+  - pending_artifacts
+  - open_questions
+  - open_alerts
+  - pending_approvals
+  - resume_instruction
+rules:
+  - "A checkpoint MUST be persisted before reporting the workflow as paused."
+  - "Resume MUST continue from the checkpoint and MUST NOT silently repeat approved work."
+  - "If an approved dependency has materially changed, downstream affected work is marked for impact review/rework."

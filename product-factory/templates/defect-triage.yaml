@@ -1,0 +1,22 @@
+# Purpose: Fast-path defect intake/classification for bugs found during development or operations.
+schema_version: "2.0"
+defect:
+  defect_id: ""
+  product_id: ""
+  title: ""
+  origin: DEVELOPMENT # DEVELOPMENT or OPERATIONS
+  detected_in_version: null
+  environment: null
+  expected_behavior_ref: ""
+  observed_behavior: ""
+  reproduction_steps: []
+  evidence_refs: []
+  production_trace_refs: []
+  user_impact: ""
+  severity: null
+  classification: UNKNOWN
+  product_definition_change_required: false
+  affected_artifacts: []
+  affected_features: []
+  affected_ai_behavior: false
+  recommended_routes: []

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Purpose: validates capability artifacts produced/consumed by the Product Factory.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "capability"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "capability": {
+      "type": "object",
+      "required": [
+        "capability_id",
+        "name",
+        "description"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

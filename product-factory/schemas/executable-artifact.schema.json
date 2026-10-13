@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Purpose: runtime envelope required for every generated Product Factory artifact.",
+  "type": "object",
+  "required": [
+    "artifact_type",
+    "title",
+    "summary",
+    "content",
+    "evidence_status",
+    "open_questions"
+  ],
+  "properties": {
+    "artifact_type": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "content": {
+      "type": [
+        "object",
+        "array"
+      ]
+    },
+    "evidence_status": {
+      "enum": [
+        "VALIDATED",
+        "PARTIALLY_VALIDATED",
+        "ASSUMPTION",
+        "HYPOTHESIS",
+        "UNKNOWN",
+        "DECISION"
+      ]
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "question",
+          "blocking"
+        ],
+        "properties": {
+          "question": {
+            "type": "string"
+          },
+          "blocking": {
+            "type": "boolean"
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "classification": {
+            "enum": [
+              "HUMAN_DECISION",
+              "DISCOVERY_REQUIRED",
+              "DOWNSTREAM_ANALYSIS",
+              "ASSUMPTION_OR_UNKNOWN"
+            ]
+          },
+          "owner": {
+            "type": [
+              "string",
+              "array",
+              "null"
+            ]
+          },
+          "route_to": {
+            "type": [
+              "string",
+              "array",
+              "null"
+            ]
+          },
+          "resolution_stage": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "traceability": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "affected_outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

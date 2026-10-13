@@ -1,0 +1,20 @@
+# Purpose: Practical crosswalk showing overlapping internal control themes across the requested external frameworks.
+schema_version: "1.0"
+themes:
+  identity_and_access:
+    internal_controls: [ZTA-01, ZTA-02, ZTA-03, ZTA-04, API-01, GENAI-04]
+  secure_design:
+    internal_controls: [SSDF-PW-01, SBD-01, SBD-02, WEB-04, ASVS-01]
+  software_supply_chain:
+    internal_controls: [SSDF-PS-01, SSDF-PS-02, SSC-01, SSC-02, SSC-04, SSC-05, GENAI-05]
+  input_output_safety:
+    internal_controls: [WEB-03, API-02, GENAI-01, GENAI-02]
+  ai_agent_control:
+    internal_controls: [ZTA-05, GENAI-04, GENAI-06, GENAI-07, GENAI-08]
+  vulnerability_management:
+    internal_controls: [SSDF-RV-01, SBD-04, SSC-05, SSC-06]
+  observability_and_accountability:
+    internal_controls: [ZTA-07, SBD-04, API-07, GENAI-10]
+  verification:
+    internal_controls: [SSDF-PW-02, WEB-01, API-01, GENAI-07, ASVS-02, ASVS-03]
+note: "This crosswalk is an engineering aid, not a certification mapping or assertion of equivalence."

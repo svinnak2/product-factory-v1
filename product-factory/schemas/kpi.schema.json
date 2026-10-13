@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Purpose: validates kpi artifacts produced/consumed by the Product Factory.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "kpi"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "kpi": {
+      "type": "object",
+      "required": [
+        "kpi_id",
+        "name",
+        "definition",
+        "measurement_status"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,9 @@
+# Purpose: Defines deterministic remediation/re-entry behavior after findings.
+schema_version: "1.0"
+rework:
+  trigger_severity: [BLOCKER, MAJOR]
+  steps: [create_remediation_request, assign_authoritative_owner, update_source_artifact, validate_schema, update_traceability, resubmit_review, close_or_reopen_finding]
+  reviewer_may_edit_source: false
+  preserve_original_finding: true
+  max_cycles: null
+  on_unresolved_material_decision: ESCALATION

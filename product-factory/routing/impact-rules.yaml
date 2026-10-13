@@ -1,0 +1,4 @@
+# Purpose: Common impact dimensions used during delta/change review.
+schema_version: "1.0"
+impact_levels: [NONE, LOW, MEDIUM, HIGH, BREAKING]
+dimensions: [personas, capabilities, features, requirements, workflows, ai_behavior, ui, api, data, integrations, permissions, security_privacy, metrics, documentation, training, support, operations, compatibility, release]

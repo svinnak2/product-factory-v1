@@ -1,0 +1,22 @@
+# Purpose: Product Factory handoff contract to canonical `agentic-ai-factory` for the ai engineering concern.
+schema_version: '1.0'
+contract:
+  id: product-factory-to-agentic-ai-factory-ai-engineering
+  source: product-factory
+  target: agentic-ai-factory
+required_fields:
+- product_id
+- initiative_id
+- capability_id
+- feature_id
+- ai_objective
+- expected_inputs
+- expected_outputs
+- responsibility_mapping
+- autonomy_level
+- acceptance_criteria
+validation:
+  reject_if:
+  - missing_required_information
+  - unresolved_critical_product_decision
+  - unowned_blocking_assumption

@@ -1,0 +1,88 @@
+# Purpose: Canonical Product Factory routing rules aligned to the authoritative AI-PDLC topology.
+schema_version: '2.0'
+description: Canonical Product Factory routing rules aligned to the AI-PDLC operating
+  model.
+rules:
+- when:
+    experience_change: true
+  route_to:
+  - experience-factory
+  reasons:
+  - NEW_USER_EXPERIENCE
+- when:
+    architecture_change: true
+  route_to:
+  - architecture-factory
+  reasons:
+  - ARCHITECTURE_CHANGE
+- when:
+    data_change: true
+  route_to:
+  - data-factory
+  reasons:
+  - DATA_MODEL_CHANGE
+- when:
+    security_impact: true
+  route_to:
+  - security-factory
+  reasons:
+  - SECURITY_IMPACT
+- when:
+    application_change: true
+  route_to:
+  - engineering-factory
+  - quality-engineering-factory
+  reasons:
+  - APPLICATION_CHANGE
+  - TEST_IMPACT
+- when:
+    agentic_ai_change: true
+  route_to:
+  - agentic-ai-factory
+  - ai-assurance-factory
+  - quality-engineering-factory
+  reasons:
+  - AI_BEHAVIOR_CHANGE
+  - ASSURANCE_REQUIRED
+  - TEST_IMPACT
+- when:
+    platform_or_delivery_change: true
+  route_to:
+  - platform-devsecops-factory
+  reasons:
+  - PLATFORM_DEVSECOPS_IMPACT
+- when:
+    observability_or_reliability_change: true
+  route_to:
+  - observability-reliability-factory
+  reasons:
+  - OBSERVABILITY_CHANGE
+- when:
+    governance_or_compliance_impact: true
+  route_to:
+  - governance-compliance-factory
+  reasons:
+  - GOVERNANCE_REVIEW
+- when:
+    organizational_change: true
+  route_to:
+  - change-management-factory
+  reasons:
+  - ORGANIZATIONAL_CHANGE
+- when:
+    documentation_or_training_change: true
+  route_to:
+  - documentation-enablement-factory
+  reasons:
+  - DOCUMENTATION_CHANGE
+  - TRAINING_CHANGE
+- when:
+    release_required: true
+  route_to:
+  - release-operational-readiness-factory
+  reasons:
+  - RELEASE_REQUIRED
+shared_asset_rule:
+  platform: shared-assets-registries-platform
+  behavior: CONSUME_OR_PUBLISH_GOVERNED_SHARED_ASSET
+  note: Shared Assets & Registries is not an ordinary lifecycle routing destination.

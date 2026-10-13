@@ -1,0 +1,12 @@
+schema_version: "1.0"
+initiative:
+  initiative_id: INIT-INVENTORY-001
+  title: Inventory Reorder Alert Evolution
+  initiative_type: NEW_FEATURE
+  development_context: PRODUCT_EVOLUTION
+  problem_or_opportunity: Existing inventory users need earlier visibility when stock approaches reorder thresholds.
+  desired_outcome: Add configurable reorder alerts without unnecessarily changing unaffected product behavior.
+  known_users: [Inventory manager]
+  known_constraints: [Existing product behavior must remain compatible unless explicitly approved.]
+  supporting_artifacts: []
+  submitted_by: test-owner

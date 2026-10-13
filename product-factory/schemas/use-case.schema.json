@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Purpose: validates use-case artifacts produced/consumed by the Product Factory.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "use_case"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "use_case": {
+      "type": "object",
+      "required": [
+        "use_case_id",
+        "title",
+        "objective"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

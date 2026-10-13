@@ -1,0 +1,22 @@
+# Purpose: Full-path Product readiness gate.
+schema_version: "1.0"
+gate_id: product-readiness
+applies_to: [NEW_PRODUCT]
+required_checks:
+  - product_intent
+  - personas_and_needs
+  - pain_points_and_evidence
+  - use_cases
+  - capabilities_and_features
+  - requirements_and_acceptance
+  - workflows
+  - traceability
+  - risks_assumptions_decisions
+conditional_checks:
+  persona_feature_mapping: {required_when: personas_defined}
+  persona_data_access_mapping: {required_when: business_data_access_varies_by_persona_or_scope}
+  ai_responsibility_mapping: {required_when: ai_enabled_capability_exists}
+  ai_ui_feature_mapping: {required_when: user_facing_ai_exists}
+  hilt_definition: {required_when: human_review_or_approval_exists}
+  analytics: {required_when: measurable_product_outcome_exists}
+outcomes: [PASS, PASS_WITH_CONDITIONS, FAIL, NEEDS_INFORMATION, NOT_APPLICABLE]

@@ -1,0 +1,36 @@
+# Purpose: LLM/GenAI/agentic security policy aligned to the current OWASP Top 10 for LLM and GenAI initiative.
+schema_version: "1.0"
+policy_id: POL-OWASP-GENAI
+scope: AI_AND_AGENTIC_SYSTEMS
+requirements:
+  - id: GENAI-01
+    level: MUST
+    rule: "Prompt/instruction injection shall be treated as an untrusted-input problem; model output alone shall not authorize privileged actions."
+  - id: GENAI-02
+    level: MUST
+    rule: "Model/agent outputs shall be validated, encoded or constrained before they drive downstream code, tools, APIs or user-visible sensitive actions."
+  - id: GENAI-03
+    level: MUST
+    rule: "Sensitive information exposure shall be minimized through data classification, least privilege, context minimization and output controls."
+  - id: GENAI-04
+    level: MUST
+    rule: "Agents and models shall have least-privilege tool/data access with deterministic authorization outside the model."
+  - id: GENAI-05
+    level: MUST
+    rule: "Third-party models, datasets, tools, plugins and dependencies shall be governed as supply-chain components."
+  - id: GENAI-06
+    level: MUST
+    rule: "Excessive agency shall be constrained through scoped actions, approval/HILT where required, bounded autonomy and auditable execution."
+  - id: GENAI-07
+    level: MUST
+    rule: "AI quality/safety/security requirements shall be evaluated against representative adversarial, failure and misuse scenarios before release."
+  - id: GENAI-08
+    level: MUST
+    rule: "Agent memory/context, retrieval sources and external content shall have provenance, authorization and poisoning/integrity controls appropriate to risk."
+  - id: GENAI-09
+    level: MUST
+    rule: "AI resource usage shall have quotas/timeouts/budgets or equivalent safeguards appropriate to availability and cost risk."
+  - id: GENAI-10
+    level: MUST
+    rule: "Users/operators shall be given appropriate transparency about AI-generated outputs, uncertainty, limitations and required human review."
+evidence: [ai_threat_model, agent_permission_matrix, eval_results, red_team_results, hilt_definition, model_tool_inventory]

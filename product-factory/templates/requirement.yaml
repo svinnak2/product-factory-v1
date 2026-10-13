@@ -1,0 +1,15 @@
+# Purpose: Defines a testable product requirement with source, rationale and acceptance linkage.
+schema_version: "1.0"
+requirement:
+  requirement_id: ""
+  type: FR
+  description: ""
+  rationale: ""
+  priority: null
+  source_ids: []
+  persona_ids: []
+  capability_id: ""
+  feature_id: ""
+  acceptance_criteria_ids: []
+  dependencies: []
+  status: DRAFT

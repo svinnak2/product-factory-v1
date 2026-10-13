@@ -1,0 +1,20 @@
+# Purpose: Product Factory handoff contract to canonical `ai-assurance-factory` for the assurance concern.
+schema_version: '1.0'
+contract:
+  id: product-factory-to-ai-assurance-factory-assurance
+  source: product-factory
+  target: ai-assurance-factory
+required_fields:
+- product_id
+- initiative_id
+- ai_requirements
+- ai_objective
+- expected_behavior
+- prohibited_behavior
+- responsibility_mapping
+- acceptance_criteria
+validation:
+  reject_if:
+  - missing_required_information
+  - unresolved_critical_product_decision
+  - unowned_blocking_assumption

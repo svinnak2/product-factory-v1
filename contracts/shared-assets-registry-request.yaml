@@ -1,0 +1,9 @@
+# Purpose: Request/registration envelope for governed reusable assets; this is not a lifecycle-stage handoff.
+schema_version: "1.0"
+contract:
+  id: product-factory-to-shared-assets-registries-platform
+  source: product-factory
+  target: shared-assets-registries-platform
+  interaction_type: SHARED_CAPABILITY
+asset_types: [shared_code_library, agent, skill, prompt, tool, model, api_contract, architecture_pattern, iac_module, security_control, evaluation_library, observability_component, design_system, documentation_template]
+required_fields: [asset_type, asset_id, purpose, owner, version]

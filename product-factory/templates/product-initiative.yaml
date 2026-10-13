@@ -1,0 +1,16 @@
+# Purpose: Human entry contract supporting new products, capabilities, features, changes, and development/operations defects.
+schema_version: "2.0"
+initiative:
+  initiative_id: ""
+  title: ""
+  initiative_type: NEW_PRODUCT
+  defect_origin: null # DEVELOPMENT or OPERATIONS; required only for DEFECT
+  problem_or_opportunity: ""
+  desired_outcome: ""
+  approved_baseline_ref: null
+  known_users: []
+  known_constraints: []
+  production_evidence_refs: []
+  supporting_information: []
+  requested_timeline: null
+  additional_context: ""

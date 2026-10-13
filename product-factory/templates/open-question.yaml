@@ -1,0 +1,9 @@
+# Purpose: Tracks unresolved questions without allowing agents to silently assume answers.
+schema_version: "1.0"
+open_question:
+  question_id: ""
+  question: ""
+  impact: ""
+  owner: ""
+  due_point: ""
+  status: OPEN

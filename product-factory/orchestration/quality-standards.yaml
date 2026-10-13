@@ -1,0 +1,102 @@
+schema_version: '1.0'
+minimum_quality:
+  all:
+  - specific_to_initiative
+  - internally_consistent
+  - no_fabricated_evidence_or_metrics
+  - explicit_unknowns_assumptions_and_decisions
+  - stable_identifiers_where_items_are_referenced
+  - traceable_to_approved_upstream_context
+  - actionable_by_downstream_teams
+  PRODUCT_CHARTER:
+  - problem_statement
+  - desired_outcomes
+  - scope_in_out
+  - stakeholders
+  - assumptions
+  - constraints
+  - risks
+  - success_definition
+  - governance
+  PRODUCT_BRIEF:
+  - users
+  - needs
+  - value_proposition
+  - scope
+  - outcomes
+  - evidence_gaps
+  PERSONAS:
+  - persona_ids
+  - goals
+  - needs
+  - pain_points
+  - context
+  - evidence_status
+  PRD:
+  - objectives
+  - personas
+  - scope
+  - capabilities
+  - features
+  - functional_requirements
+  - nonfunctional_requirements
+  - ai_requirements_if_applicable
+  - data_security_privacy_observability_operational_requirements
+  - acceptance_summary
+  - dependencies
+  - risks
+  - open_decisions
+  - traceability
+  REQUIREMENTS:
+  - unique_ids
+  - requirement_type
+  - statement
+  - rationale
+  - priority
+  - source_trace
+  - acceptance_reference
+  USER_STORIES:
+  - unique_ids
+  - persona
+  - need
+  - business_value
+  - requirement_trace
+  ACCEPTANCE_CRITERIA:
+  - testable_conditions
+  - requirement_or_story_trace
+  - positive_and_negative_paths
+  WORKFLOWS:
+  - actors
+  - preconditions
+  - happy_path
+  - alternate_paths
+  - exceptions
+  - human_system_ai_steps
+  KPI_FRAMEWORK:
+  - metric_definition
+  - purpose
+  - formula_or_measurement
+  - source
+  - owner
+  - baseline
+  - target_or_tbd
+  PRTM:
+  - objective_to_capability_to_feature_to_requirement_to_acceptance_to_test_trace
+  PRODUCT_PACKAGE:
+  - approved_artifact_index
+  - unresolved_items
+  - routing
+  - version_provenance
+review:
+  max_generation_attempts: 3
+  blocking_severities:
+  - BLOCKER
+  - MAJOR
+  readiness_dimensions:
+  - PRODUCT_DEFINITION_READINESS
+  - IMPLEMENTATION_READINESS
+  product_definition_blocking_rule: Only BLOCKER/MAJOR findings with blocks_product_definition=true
+    block Product artifact progression.
+  downstream_dependency_rule: Architecture/Data/Security/Engineering/Operations/QE/Assurance
+    gaps route downstream and may make implementation NOT_READY without failing Product
+    Definition when ownership, route and resolution stage are explicit.

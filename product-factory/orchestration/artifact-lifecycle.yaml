@@ -1,0 +1,28 @@
+# Purpose: Governed lifecycle for every Product Factory output.
+schema_version: "1.0"
+states:
+  - DRAFT
+  - GENERATING
+  - GENERATED
+  - INTERNAL_REVIEW
+  - HUMAN_REVIEW_REQUIRED
+  - APPROVED
+  - CHANGES_REQUESTED
+  - REJECTED
+  - REWORK
+  - SUPERSEDED
+transitions:
+  DRAFT: [GENERATING]
+  GENERATING: [GENERATED]
+  GENERATED: [INTERNAL_REVIEW]
+  INTERNAL_REVIEW: [HUMAN_REVIEW_REQUIRED, REWORK]
+  HUMAN_REVIEW_REQUIRED: [APPROVED, CHANGES_REQUESTED, REJECTED]
+  CHANGES_REQUESTED: [REWORK]
+  REJECTED: [REWORK, SUPERSEDED]
+  REWORK: [GENERATING]
+  APPROVED: [SUPERSEDED]
+rules:
+  - "Approval is bound to an immutable artifact version."
+  - "Any material change after approval creates a new version with HUMAN_REVIEW_REQUIRED."
+  - "Agents may generate/review drafts but cannot record human approval."
+  - "A dependent governed artifact cannot use an unapproved upstream artifact as an approved baseline."

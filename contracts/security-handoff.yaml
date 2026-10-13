@@ -1,0 +1,18 @@
+# Purpose: Product Factory handoff contract to canonical `security-factory` for the security concern.
+schema_version: '1.0'
+contract:
+  id: product-factory-to-security-factory-security
+  source: product-factory
+  target: security-factory
+required_fields:
+- product_id
+- initiative_id
+- personas
+- persona_data_access
+- security_privacy_requirements
+- sensitive_data_flags
+validation:
+  reject_if:
+  - missing_required_information
+  - unresolved_critical_product_decision
+  - unowned_blocking_assumption

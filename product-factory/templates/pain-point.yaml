@@ -1,0 +1,23 @@
+# Purpose: Captures a user/business pain point with qualitative and quantitative evidence.
+schema_version: "1.0"
+pain_point:
+  pain_point_id: ""
+  persona_ids: []
+  title: ""
+  description: ""
+  current_state: ""
+  desired_state: ""
+  frequency: null
+  severity: null
+  qualitative_evidence: []
+  quantitative_evidence: []
+  business_impact: ""
+  user_impact: ""
+  operational_impact: ""
+  evidence_sources: []
+  evidence_status: UNKNOWN
+  confidence: null
+  assumptions: []
+  related_use_cases: []
+  related_capabilities: []
+  related_features: []

@@ -1,0 +1,19 @@
+# Purpose: Allocates activity responsibility among humans, deterministic systems and AI/agents.
+schema_version: "1.0"
+capabilities:
+  - capability_id: ""
+    workflow_id: ""
+    activities:
+      - activity_id: ""
+        activity: ""
+        primary_responsibility: ""
+        ai_responsibilities: []
+        system_responsibilities: []
+        human_responsibilities: []
+        autonomy_level: L0
+        human_review_required: false
+        approval_required: false
+        override_allowed: false
+        escalation_conditions: []
+        rationale: ""
+        risks: []

@@ -1,0 +1,30 @@
+# Purpose: Zero-trust policy aligned to NIST SP 800-207 and SP 800-207A.
+schema_version: "1.0"
+policy_id: POL-ZTA
+scope: ALL_FACTORIES
+requirements:
+  - id: ZTA-01
+    level: MUST
+    rule: "No user, workload, agent, service, device or network location receives implicit trust solely from location, ownership or affiliation."
+  - id: ZTA-02
+    level: MUST
+    rule: "Access decisions shall authenticate the relevant identity and authorize the requested resource/action using least privilege."
+  - id: ZTA-03
+    level: MUST
+    rule: "Authorization shall be resource- and action-specific and shall consider business scope, tenant/organization boundaries and relevant context."
+  - id: ZTA-04
+    level: MUST
+    rule: "Human, service and AI-agent identities shall be distinguishable and auditable."
+  - id: ZTA-05
+    level: MUST
+    rule: "AI-agent autonomy shall not confer permissions; tool/data access requires separately enforced authorization."
+  - id: ZTA-06
+    level: MUST
+    rule: "Credentials and tokens shall be short-lived where feasible, protected in transit/storage and scoped to intended audiences/resources."
+  - id: ZTA-07
+    level: MUST
+    rule: "Security-relevant access decisions and privileged actions shall generate auditable telemetry."
+  - id: ZTA-08
+    level: SHOULD
+    rule: "Continuous signals such as identity, workload/device posture, risk and behavior should inform access where technically and operationally appropriate."
+evidence: [identity_architecture, authorization_model, privileged_access_review, agent_tool_permissions, access_logs]

@@ -1,0 +1,14 @@
+# Purpose: Defines a product persona and evidence-backed responsibilities/needs.
+schema_version: "1.0"
+persona:
+  persona_id: ""
+  name: ""
+  goals: []
+  responsibilities: []
+  tasks: []
+  decisions: []
+  information_needs: []
+  pain_point_ids: []
+  constraints: []
+  evidence_status: UNKNOWN
+  evidence_sources: []

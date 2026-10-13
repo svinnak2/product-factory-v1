@@ -1,0 +1,10 @@
+# Purpose: Defines product analytics event intent; Observability owns technical telemetry implementation.
+schema_version: "1.0"
+event:
+  event_id: ""
+  name: ""
+  purpose: ""
+  trigger: ""
+  properties: []
+  kpi_ids: []
+  privacy_notes: ""

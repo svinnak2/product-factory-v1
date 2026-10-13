@@ -1,0 +1,18 @@
+# Purpose: Product Factory handoff contract to canonical `engineering-factory` for the api engineering concern.
+schema_version: '1.0'
+contract:
+  id: product-factory-to-engineering-factory-api-engineering
+  source: product-factory
+  target: engineering-factory
+required_fields:
+- product_id
+- initiative_id
+- api_product_requirements
+- business_rules
+- access_requirements
+- acceptance_criteria
+validation:
+  reject_if:
+  - missing_required_information
+  - unresolved_critical_product_decision
+  - unowned_blocking_assumption

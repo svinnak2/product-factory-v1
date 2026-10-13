@@ -1,0 +1,28 @@
+# Purpose: Human approval policy for Product Factory outputs. Default is approval-required.
+schema_version: "1.0"
+default:
+  human_approval: REQUIRED
+  block_downstream_dependency_use: true
+  reapproval_on_material_change: true
+governed_outputs:
+  - PRODUCT_CHARTER
+  - PRODUCT_BRIEF
+  - PERSONAS
+  - PAIN_POINT_ANALYSIS
+  - USE_CASES
+  - PRODUCT_CAPABILITIES
+  - PRODUCT_FEATURES
+  - PRD
+  - REQUIREMENTS
+  - USER_STORIES
+  - ACCEPTANCE_CRITERIA
+  - WORKFLOWS
+  - PERSONA_FEATURE_MAP
+  - PERSONA_DATA_ACCESS_MAP
+  - HUMAN_SYSTEM_AI_RESPONSIBILITY_MAP
+  - AI_AGENT_UI_FEATURE_MAP
+  - KPI_FRAMEWORK
+  - PRTM
+  - CHANGE_IMPACT_ANALYSIS
+  - PRODUCT_PACKAGE
+human_decisions: [APPROVED, CHANGES_REQUESTED, REJECTED]

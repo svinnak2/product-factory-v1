@@ -1,0 +1,19 @@
+# Purpose: Maps AI/agent capabilities and actions to user-facing product interactions/features.
+schema_version: "1.0"
+mappings:
+  - agent_id: ""
+    agent_capability: ""
+    agent_action: ""
+    workflow_id: ""
+    persona_id: ""
+    feature_id: ""
+    interaction_type: ""
+    ai_output: ""
+    information_displayed: []
+    user_actions: []
+    approval_required: false
+    editable: false
+    override_allowed: false
+    confidence_display_required: false
+    failure_behavior: ""
+    hilt_requirement: null

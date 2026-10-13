@@ -1,0 +1,12 @@
+# Purpose: Sends review findings back to the authoritative owner without the reviewer editing source artifacts.
+schema_version: "1.0"
+remediation:
+  finding_id: ""
+  severity: MAJOR
+  affected_artifact: ""
+  affected_identifier: ""
+  issue: ""
+  evidence_refs: []
+  expected_resolution: ""
+  responsible_agent_or_team: ""
+  status: OPEN

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Purpose: structured warning/blocker/decision/escalation alert.",
+  "type": "object",
+  "required": [
+    "alert_id",
+    "initiative_id",
+    "severity",
+    "type",
+    "message",
+    "status"
+  ],
+  "properties": {
+    "alert_id": {
+      "type": "string"
+    },
+    "initiative_id": {
+      "type": "string"
+    },
+    "severity": {
+      "enum": [
+        "INFO",
+        "WARNING",
+        "BLOCKER",
+        "DECISION_REQUIRED",
+        "APPROVAL_REQUIRED",
+        "ESCALATION_REQUIRED"
+      ]
+    },
+    "type": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "impact": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "options": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "enum": [
+        "OPEN",
+        "RESOLVED",
+        "WAIVED",
+        "CANCELLED"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Purpose: structured request/response for missing or ambiguous information.",
+  "type": "object",
+  "required": [
+    "interaction_id",
+    "initiative_id",
+    "question",
+    "blocking",
+    "status"
+  ],
+  "properties": {
+    "interaction_id": {
+      "type": "string"
+    },
+    "initiative_id": {
+      "type": "string"
+    },
+    "question": {
+      "type": "string"
+    },
+    "reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "blocking": {
+      "type": "boolean"
+    },
+    "status": {
+      "enum": [
+        "OPEN",
+        "ANSWERED",
+        "CANCELLED"
+      ]
+    },
+    "answer": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "assumption_allowed": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

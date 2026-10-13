@@ -1,0 +1,23 @@
+# Purpose: Example Product Initiative entering the platform through the canonical intake boundary.
+schema_version: "1.0"
+initiative:
+  initiative_id: INIT-MED-APPEALS-001
+  title: AI-Powered Medical Appeals
+  initiative_type: NEW_PRODUCT
+  development_context: PRODUCT_CREATION
+  problem_or_opportunity: >
+    Medical appeals require substantial manual effort to collect, organize,
+    classify, validate and review heterogeneous documentation and coordinate
+    appeal preparation.
+  desired_outcome: >
+    Create a secure, auditable AI-assisted medical appeals product that reduces
+    avoidable manual work while retaining deterministic controls and appropriate
+    human review for consequential actions.
+  known_users:
+    - Appeals Specialist
+    - Appeals Coordinator
+    - Appeals Supervisor
+  known_constraints:
+    - Sensitive healthcare and insurance information requires appropriate security and privacy controls.
+  supporting_artifacts: []
+  submitted_by: human-product-owner

@@ -1,0 +1,11 @@
+# Purpose: Records a material product decision and its rationale/evidence.
+schema_version: "1.0"
+decision:
+  decision_id: ""
+  question: ""
+  decision: ""
+  rationale: ""
+  authority: ""
+  evidence_refs: []
+  date: null
+  status: OPEN

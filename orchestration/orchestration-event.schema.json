@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Purpose: validates auditable orchestration events shared with the parent AI-PDLC factory.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "event"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "event": {
+      "type": "object",
+      "required": [
+        "event_id",
+        "initiative_id",
+        "factory_id",
+        "mode",
+        "from",
+        "to",
+        "status"
+      ],
+      "properties": {
+        "event_id": {
+          "type": "string"
+        },
+        "initiative_id": {
+          "type": "string"
+        },
+        "factory_id": {
+          "type": "string"
+        },
+        "mode": {
+          "enum": [
+            "FORWARD",
+            "BACKWARD",
+            "PARALLEL",
+            "CONDITIONAL",
+            "REWORK",
+            "ESCALATION"
+          ]
+        },
+        "from": {
+          "type": "string"
+        },
+        "to": {},
+        "status": {
+          "enum": [
+            "REQUESTED",
+            "STARTED",
+            "COMPLETED",
+            "BLOCKED",
+            "PAUSED",
+            "FAILED"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        },
+        "evidence_refs": {
+          "type": "array"
+        },
+        "checkpoint": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

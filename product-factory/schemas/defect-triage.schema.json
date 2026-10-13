@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Purpose: validates defect-triage artifacts produced/consumed by the Product Factory.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "defect"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "defect": {
+      "type": "object",
+      "required": [
+        "defect_id",
+        "product_id",
+        "observed_behavior",
+        "classification"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

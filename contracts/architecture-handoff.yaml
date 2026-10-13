@@ -1,0 +1,20 @@
+# Purpose: Product Factory handoff contract to canonical `architecture-factory` for the architecture concern.
+schema_version: '1.0'
+contract:
+  id: product-factory-to-architecture-factory-architecture
+  source: product-factory
+  target: architecture-factory
+required_fields:
+- product_id
+- initiative_id
+- capabilities
+- features
+- requirements
+- nfrs
+- constraints
+- dependencies
+validation:
+  reject_if:
+  - missing_required_information
+  - unresolved_critical_product_decision
+  - unowned_blocking_assumption

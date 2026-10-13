@@ -1,0 +1,18 @@
+# Purpose: Product Factory handoff contract to canonical `release-operational-readiness-factory` for the release concern.
+schema_version: '1.0'
+contract:
+  id: product-factory-to-release-operational-readiness-factory-release
+  source: product-factory
+  target: release-operational-readiness-factory
+required_fields:
+- product_id
+- initiative_id
+- release_impact
+- affected_features
+- compatibility
+- migration_or_rollout_needs
+validation:
+  reject_if:
+  - missing_required_information
+  - unresolved_critical_product_decision
+  - unowned_blocking_assumption

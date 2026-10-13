@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Purpose: validates change-impact artifacts produced/consumed by the Product Factory.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "change_impact"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "change_impact": {
+      "type": "object",
+      "required": [
+        "initiative_id",
+        "current_behavior",
+        "proposed_behavior",
+        "impact_level"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Purpose: validates product-event artifacts produced/consumed by the Product Factory.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "event"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "event": {
+      "type": "object",
+      "required": [
+        "event_id",
+        "name",
+        "purpose"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

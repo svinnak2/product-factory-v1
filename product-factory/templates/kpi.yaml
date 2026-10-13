@@ -1,0 +1,16 @@
+# Purpose: Defines a product KPI/outcome measure without inventing unapproved targets.
+schema_version: "1.0"
+kpi:
+  kpi_id: ""
+  name: ""
+  business_question: ""
+  definition: ""
+  calculation: ""
+  unit: ""
+  population: ""
+  dimensions: []
+  data_source: ""
+  baseline: null
+  target: null
+  measurement_status: NOT_MEASURED
+  owner: ""

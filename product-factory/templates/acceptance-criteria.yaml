@@ -1,0 +1,9 @@
+# Purpose: Defines observable pass/fail conditions for a requirement.
+schema_version: "1.0"
+acceptance_criteria:
+  acceptance_criteria_id: ""
+  requirement_id: ""
+  given: []
+  when: []
+  then: []
+  exception_conditions: []

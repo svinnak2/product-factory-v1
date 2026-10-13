@@ -1,0 +1,27 @@
+# Purpose: Captures current→proposed delta and cross-factory impact for existing-product changes.
+schema_version: "1.0"
+change_impact:
+  initiative_id: ""
+  change_summary: ""
+  business_reason: ""
+  current_behavior: ""
+  proposed_behavior: ""
+  impact_level: NONE
+  affected_personas: []
+  affected_capabilities: []
+  affected_features: []
+  affected_requirements: []
+  affected_workflows: []
+  affected_ai_behavior: []
+  affected_ui: []
+  affected_data: []
+  affected_apis: []
+  affected_integrations: []
+  affected_permissions: []
+  affected_metrics: []
+  documentation_impact: NOT_REQUIRED
+  training_impact: NOT_REQUIRED
+  support_impact: NOT_REQUIRED
+  compatibility_impact: NONE
+  risks: []
+  required_downstream_teams: []

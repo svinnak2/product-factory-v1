@@ -1,0 +1,29 @@
+# Purpose: Product Creation/Product Evolution context classification and routing rules.
+schema_version: "1.0"
+contexts:
+  PRODUCT_CREATION:
+    meaning: "Creation of a new product/application/product experience."
+    typical_initiatives: [NEW_PRODUCT]
+    baseline_requirement: "No existing product baseline is required, but shared assets and constraints may be reused."
+  PRODUCT_EVOLUTION:
+    meaning: "Change to an existing product baseline."
+    typical_initiatives: [NEW_CAPABILITY, NEW_FEATURE, PRODUCT_CHANGE, DEFECT]
+    baseline_requirement: "Current approved product baseline and relevant artifacts must be discovered or explicitly marked incomplete."
+product_evolution_required_analysis:
+  - current_state_baseline
+  - affected_personas
+  - affected_capabilities_features
+  - workflow_delta
+  - requirements_delta
+  - data_security_access_impact
+  - api_integration_impact
+  - ai_behavior_impact
+  - compatibility_migration_impact
+  - regression_impact
+  - documentation_training_change_impact
+missing_baseline_behavior:
+  severity: WARNING_OR_BLOCKER_BY_MATERIALITY
+  actions: [REQUEST_ARTIFACTS, REQUEST_LOCATION, CONTINUE_WITH_EXPLICIT_ASSUMPTIONS_IF_ALLOWED, PAUSE]
+rules:
+  - "NEW_PRODUCT is normally PRODUCT_CREATION but context is explicitly recorded rather than inferred permanently."
+  - "Product Evolution does not require every downstream factory; impact-based routing determines participation."

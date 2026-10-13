@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Purpose: validates Product Initiative submissions at the AI-PDLC platform boundary.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "initiative"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "initiative": {
+      "type": "object",
+      "required": [
+        "initiative_id",
+        "title",
+        "initiative_type",
+        "development_context",
+        "problem_or_opportunity",
+        "desired_outcome"
+      ],
+      "properties": {
+        "initiative_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "initiative_type": {
+          "enum": [
+            "NEW_PRODUCT",
+            "NEW_CAPABILITY",
+            "NEW_FEATURE",
+            "PRODUCT_CHANGE",
+            "DEFECT"
+          ]
+        },
+        "development_context": {
+          "enum": [
+            "PRODUCT_CREATION",
+            "PRODUCT_EVOLUTION"
+          ]
+        },
+        "defect_origin": {
+          "enum": [
+            "DEVELOPMENT",
+            "OPERATIONS",
+            null
+          ]
+        },
+        "problem_or_opportunity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "desired_outcome": {
+          "type": "string",
+          "minLength": 1
+        },
+        "known_users": {
+          "type": "array"
+        },
+        "known_constraints": {
+          "type": "array"
+        },
+        "supporting_artifacts": {
+          "type": "array"
+        },
+        "submitted_by": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

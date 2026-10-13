@@ -1,0 +1,13 @@
+# Purpose: Traces persona needs/pain points and use cases to capabilities/features.
+schema_version: "1.0"
+mappings:
+  - persona_id: ""
+    need_or_pain_point_id: ""
+    use_case_id: ""
+    capability_id: ""
+    feature_id: ""
+    interaction_type: ""
+    priority: null
+    evidence_status: UNKNOWN
+    rationale: ""
+    requirement_ids: []

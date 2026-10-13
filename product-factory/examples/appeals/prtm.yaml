@@ -1,0 +1,23 @@
+# Purpose: Example product-side PRTM row prepared for downstream lifecycle enrichment.
+schema_version: "1.0"
+traceability:
+  - business_objective_id: OBJ-001
+    product_outcome_ids: [OUT-001]
+    pain_point_ids: [PP-003]
+    persona_ids: [appeals-specialist]
+    user_need_ids: [NEED-004]
+    use_case_ids: [UC-DOC-CLASSIFY]
+    capability_id: CAP-DOC-INTELLIGENCE
+    feature_id: FEAT-DOC-CLASSIFICATION
+    requirement_id: APL-FR-014
+    workflow_ids: [WF-DOC-CLASSIFICATION]
+    acceptance_criteria_ids: [AC-APL-FR-014-01]
+    kpi_ids: [KPI-CLASSIFICATION-CORRECTION-RATE]
+    architecture_decision_ids: []
+    implementation_component_ids: []
+    test_case_ids: []
+    security_control_ids: []
+    assurance_evaluation_ids: []
+    observability_signal_ids: []
+    release_evidence_ids: []
+    production_outcome_ids: []

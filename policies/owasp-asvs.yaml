@@ -1,0 +1,26 @@
+# Purpose: Application-security verification policy aligned to OWASP ASVS 5.0.x.
+schema_version: "1.0"
+policy_id: POL-OWASP-ASVS
+scope: WEB_APPLICATIONS_AND_APIS
+baseline: OWASP_ASVS_5_0_X
+requirements:
+  - id: ASVS-01
+    level: MUST
+    rule: "Each releasable application shall declare its target ASVS verification level based on risk and product context."
+  - id: ASVS-02
+    level: MUST
+    rule: "Applicable ASVS requirements shall be tracked with version-qualified identifiers and objective evidence."
+  - id: ASVS-03
+    level: MUST
+    rule: "Unmet mandatory ASVS requirements shall block release unless an authorized, time-bound exception is approved."
+  - id: ASVS-04
+    level: MUST
+    rule: "Verification shall cover applicable areas including input handling, business logic, frontend, APIs, file handling, authentication, sessions, authorization, tokens/OAuth/OIDC, cryptography, communications, configuration, data protection, secure architecture/coding, logging and error handling."
+  - id: ASVS-05
+    level: MUST
+    rule: "ASVS evidence shall identify application/version, requirement ID, result, evidence reference, tester/tool and timestamp."
+default_level_guidance:
+  L1: "Baseline applications with lower assurance needs."
+  L2: "Recommended default for applications handling sensitive or business-critical data."
+  L3: "High-value/high-risk applications requiring the highest verification rigor."
+evidence: [asvs_profile, asvs_results, exceptions]

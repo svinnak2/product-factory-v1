@@ -1,0 +1,40 @@
+# Purpose: Versioned external source references used when maintaining this internal policy baseline.
+schema_version: "1.0"
+sources:
+  - id: NIST-SP-800-218
+    title: "Secure Software Development Framework (SSDF) Version 1.1"
+    status: FINAL
+    url: "https://csrc.nist.gov/pubs/sp/800/218/final"
+  - id: NIST-SP-800-218A
+    title: "Secure Software Development Practices for Generative AI and Dual-Use Foundation Models"
+    status: FINAL
+    url: "https://csrc.nist.gov/pubs/sp/800/218/a/final"
+  - id: NIST-SP-800-207
+    title: "Zero Trust Architecture"
+    status: FINAL
+    url: "https://csrc.nist.gov/pubs/sp/800/207/final"
+  - id: NIST-SP-800-207A
+    title: "A Zero Trust Architecture Model for Access Control in Cloud-Native Applications"
+    status: FINAL
+    url: "https://csrc.nist.gov/pubs/sp/800/207/a/final"
+  - id: CISA-SECURE-BY-DESIGN
+    title: "Shifting the Balance of Cybersecurity Risk: Principles and Approaches for Secure by Design Software"
+    url: "https://www.cisa.gov/securebydesign"
+  - id: CISA-SBOM
+    title: "CISA Software Bill of Materials resources and guidance"
+    url: "https://www.cisa.gov/sbom"
+  - id: OWASP-TOP10
+    title: "OWASP Top 10:2025"
+    url: "https://top10.owasp.org/2025/"
+  - id: OWASP-API
+    title: "OWASP API Security Top 10"
+    url: "https://owasp.org/API-Security/"
+  - id: OWASP-GENAI
+    title: "OWASP Top 10 for LLM and GenAI"
+    url: "https://genai.owasp.org/initiative/owasp-top-10-for-llm-and-genai/"
+  - id: OWASP-ASVS
+    title: "OWASP Application Security Verification Standard"
+    url: "https://owasp.org/www-project-application-security-verification-standard/"
+maintenance:
+  review_frequency: QUARTERLY
+  trigger_events: [framework_release, major_revision, material_threat_change, platform_architecture_change]

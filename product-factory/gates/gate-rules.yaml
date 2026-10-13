@@ -1,0 +1,12 @@
+# Purpose: Shared gate semantics and finding severity behavior.
+schema_version: "1.0"
+finding_severity:
+  BLOCKER: blocks_affected_gate
+  MAJOR: remediation_required_before_affected_downstream_work
+  MINOR: non_blocking
+  ADVISORY: optional_unless_governed
+outcomes: [PASS, PASS_WITH_CONDITIONS, FAIL, NEEDS_INFORMATION, NOT_APPLICABLE]
+override_policy:
+  silent_override: forbidden
+  preserve_original_finding: true
+  require_authority_rationale_scope: true

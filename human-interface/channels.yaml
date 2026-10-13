@@ -1,0 +1,16 @@
+# Purpose: Supported presentation channels over the same human-interaction protocol.
+schema_version: "1.0"
+channels:
+  CLI:
+    status: IMPLEMENTED_REFERENCE
+    intended_for: [development, pilot, debugging, power_users]
+  WEB_CONSOLE:
+    status: RECOMMENDED_NEXT
+    intended_for: [product_owners, business_users, reviewers]
+  API:
+    status: CONTRACT_READY
+    intended_for: [automation, integrations]
+rules:
+  - "Channels MUST NOT change approval, pause, escalation or artifact-state semantics."
+  - "Authentication and authorization MUST be enforced by the deployed channel."
+  - "Human decisions MUST be persisted by a durable runtime implementation before production use."

@@ -1,0 +1,19 @@
+# Purpose: Product Factory handoff contract to canonical `change-management-factory` for the change management concern.
+schema_version: '1.0'
+contract:
+  id: product-factory-to-change-management-factory-change-management
+  source: product-factory
+  target: change-management-factory
+required_fields:
+- product_id
+- initiative_id
+- affected_personas
+- role_changes
+- workflow_changes
+- responsibility_changes
+- adoption_impacts
+validation:
+  reject_if:
+  - missing_required_information
+  - unresolved_critical_product_decision
+  - unowned_blocking_assumption

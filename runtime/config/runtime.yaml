@@ -1,0 +1,19 @@
+schema_version: "1.1"
+state_dir: .runtime
+session_layout: .runtime/sessions/<initiative_id>/<session_id>
+default_model_adapter: CODEX
+adapters:
+  CODEX:
+    binary_env: AI_PDLC_CODEX_BIN
+    model_env: AI_PDLC_CODEX_MODEL
+    timeout_env: AI_PDLC_CODEX_TIMEOUT
+    authentication: supported_codex_cli_login_or_CODEX_ACCESS_TOKEN
+  OPENAI_COMPATIBLE:
+    endpoint_env: AI_PDLC_MODEL_ENDPOINT
+    api_key_env: AI_PDLC_MODEL_API_KEY
+    model_env: AI_PDLC_MODEL_NAME
+security:
+  persist_secrets: false
+  log_prompts: false
+  log_model_raw_response: false
+  codex_sandbox: read-only

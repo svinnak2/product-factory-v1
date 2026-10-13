@@ -1,0 +1,28 @@
+# Purpose: Secure-by-design/default policy based on CISA principles for software manufacturers.
+schema_version: "1.0"
+policy_id: POL-SBD
+scope: ALL_FACTORIES
+principles:
+  - TAKE_OWNERSHIP_OF_CUSTOMER_SECURITY_OUTCOMES
+  - EMBRACE_RADICAL_TRANSPARENCY_AND_ACCOUNTABILITY
+  - LEAD_FROM_THE_TOP
+requirements:
+  - id: SBD-01
+    level: MUST
+    rule: "Security shall be treated as a core product requirement and lifecycle responsibility, not an optional customer add-on."
+  - id: SBD-02
+    level: MUST
+    rule: "Secure defaults shall minimize avoidable customer configuration burden and disable unnecessary exposure by default."
+  - id: SBD-03
+    level: MUST
+    rule: "High-impact security controls such as strong authentication, authorization, logging and safe recovery shall be designed into applicable products."
+  - id: SBD-04
+    level: MUST
+    rule: "Known vulnerabilities, material security limitations and remediation status shall be tracked transparently through governed disclosure/evidence processes."
+  - id: SBD-05
+    level: MUST
+    rule: "Product leadership shall own security outcomes and unresolved material security risks shall be escalated to authorized decision makers."
+  - id: SBD-06
+    level: SHOULD
+    rule: "Security usability shall be considered so that the secure path is the easiest normal path for users and operators."
+evidence: [product_security_requirements, secure_default_review, risk_register, vulnerability_process, leadership_risk_acceptance]

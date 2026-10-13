@@ -1,0 +1,30 @@
+# Purpose: Web-application risk policy aligned to OWASP Top 10:2025.
+schema_version: "1.0"
+policy_id: POL-OWASP-WEB
+scope: WEB_APPLICATIONS
+baseline: OWASP_TOP_10_2025
+risk_categories:
+  - A01_BROKEN_ACCESS_CONTROL
+  - A02_SECURITY_MISCONFIGURATION
+  - A03_SOFTWARE_SUPPLY_CHAIN_FAILURES
+  - A04_CRYPTOGRAPHIC_FAILURES
+  - A05_INJECTION
+  - A06_INSECURE_DESIGN
+  - A07_AUTHENTICATION_FAILURES
+  - A08_SOFTWARE_OR_DATA_INTEGRITY_FAILURES
+  - A09_SECURITY_LOGGING_AND_ALERTING_FAILURES
+  - A10_MISHANDLING_OF_EXCEPTIONAL_CONDITIONS
+requirements:
+  - id: WEB-01
+    level: MUST
+    rule: "Applicable web risk categories shall be addressed by design controls and verified before release."
+  - id: WEB-02
+    level: MUST
+    rule: "Authorization shall be deny-by-default where practical and enforced server-side at trusted boundaries."
+  - id: WEB-03
+    level: MUST
+    rule: "Untrusted input shall be validated and safely handled at appropriate trust boundaries."
+  - id: WEB-04
+    level: MUST
+    rule: "Security configuration, cryptography, integrity, logging and exceptional-condition handling shall be explicitly verified."
+evidence: [threat_model, security_test_results, asvs_results, vulnerability_scan]

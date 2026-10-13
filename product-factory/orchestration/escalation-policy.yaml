@@ -1,0 +1,16 @@
+# Purpose: Defines when/how work escalates to human or governing authority and how it resumes.
+schema_version: "1.0"
+escalation:
+  triggers:
+    - material_business_decision_required
+    - conflicting_authoritative_requirements
+    - risk_acceptance_required
+    - policy_exception_required
+    - unresolved_high_impact_scope_tradeoff
+    - insufficient_evidence_for_consequential_decision
+    - repeated_rework_without_resolution
+  targets: [product_authority, policy_authority, risk_authority, parent_factory_orchestrator]
+  required_record: [escalation_id, initiative_id, reason, evidence_refs, decision_needed, requested_authority, checkpoint, blocked_scope]
+  affected_work_state: PAUSED
+  unaffected_parallel_work_may_continue: true
+  resume_requires: [recorded_decision, authority, rationale, timestamp]

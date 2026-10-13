@@ -1,0 +1,13 @@
+# Purpose: Example NEW_PRODUCT intake.
+schema_version: "1.0"
+initiative:
+  initiative_id: INIT-APL-001
+  title: Healthcare Appeals Automation
+  initiative_type: NEW_PRODUCT
+  problem_or_opportunity: "Appeal preparation contains manual document review, classification, validation and case-preparation work."
+  desired_outcome: "Reduce avoidable manual effort while maintaining appropriate human oversight and traceability."
+  known_users: [appeals-specialist, appeals-director]
+  known_constraints: ["Sensitive healthcare information may be processed.", "Material AI outputs may require human review."]
+  supporting_information: []
+  requested_timeline: null
+  additional_context: "Consider deterministic and AI/agentic approaches where appropriate."

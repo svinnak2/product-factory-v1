@@ -1,0 +1,39 @@
+# Purpose: Machine-readable registry of platform security policies.
+schema_version: '1.0'
+description: Authoritative registry of AI-PDLC platform security and secure-development
+  policies.
+policies:
+- id: POL-SSDF
+  file: nist-ssdf.yaml
+  frameworks:
+  - NIST SP 800-218
+  - NIST SP 800-218A
+- id: POL-ZTA
+  file: nist-zero-trust.yaml
+  frameworks:
+  - NIST SP 800-207
+  - NIST SP 800-207A
+- id: POL-SBD
+  file: cisa-secure-by-design.yaml
+  frameworks:
+  - CISA Secure by Design
+- id: POL-SUPPLY
+  file: cisa-software-supply-chain.yaml
+  frameworks:
+  - CISA SBOM / software supply-chain guidance
+- id: POL-OWASP-WEB
+  file: owasp-web-top10.yaml
+  frameworks:
+  - OWASP Top 10:2025
+- id: POL-OWASP-API
+  file: owasp-api-security.yaml
+  frameworks:
+  - OWASP API Security Top 10
+- id: POL-OWASP-GENAI
+  file: owasp-genai-security.yaml
+  frameworks:
+  - OWASP Top 10 for LLM/GenAI
+- id: POL-OWASP-ASVS
+  file: owasp-asvs.yaml
+  frameworks:
+  - OWASP ASVS 5.0.x

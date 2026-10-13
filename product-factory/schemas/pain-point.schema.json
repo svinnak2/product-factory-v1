@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Purpose: validates pain-point artifacts produced/consumed by the Product Factory.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "pain_point"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "pain_point": {
+      "type": "object",
+      "required": [
+        "pain_point_id",
+        "title",
+        "description",
+        "evidence_status"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

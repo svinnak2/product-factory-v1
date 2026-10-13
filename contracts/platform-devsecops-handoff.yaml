@@ -1,0 +1,9 @@
+# Purpose: Product-level handoff for platform, CI/CD, environment or developer-platform impact.
+schema_version: "1.0"
+contract:
+  id: product-factory-to-platform-devsecops-factory
+  source: product-factory
+  target: platform-devsecops-factory
+required_fields: [product_id, initiative_id, platform_or_delivery_requirements, constraints, operational_requirements]
+validation:
+  reject_if: [missing_required_information, unresolved_critical_product_decision]

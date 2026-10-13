@@ -1,0 +1,53 @@
+# Purpose: Canonical factory IDs, types and lifecycle-stage placement for cross-factory interoperability.
+schema_version: '1.0'
+description: Canonical AI-PDLC factory topology. IDs in this file are normative interoperability
+  identifiers.
+factories:
+- id: product-factory
+  type: Lifecycle
+  lifecycle_stage: 1. Discover & Define
+- id: experience-factory
+  type: Lifecycle
+  lifecycle_stage: 1. Discover & Define / 3. Build
+- id: architecture-factory
+  type: Lifecycle
+  lifecycle_stage: 2. Design
+- id: data-factory
+  type: Lifecycle
+  lifecycle_stage: 2. Design / 3. Build
+- id: security-factory
+  type: Cross-cutting
+  lifecycle_stage: 2. Design / 3. Build / 4. Verify
+- id: engineering-factory
+  type: Lifecycle
+  lifecycle_stage: 3. Build
+- id: agentic-ai-factory
+  type: Lifecycle
+  lifecycle_stage: 3. Build
+- id: quality-engineering-factory
+  type: Lifecycle
+  lifecycle_stage: 4. Verify & Assure
+- id: ai-assurance-factory
+  type: Lifecycle
+  lifecycle_stage: 4. Verify & Assure
+- id: platform-devsecops-factory
+  type: Cross-cutting
+  lifecycle_stage: Cross-cutting
+- id: observability-reliability-factory
+  type: Cross-cutting
+  lifecycle_stage: Cross-cutting / 5. Operate
+- id: governance-compliance-factory
+  type: Cross-cutting
+  lifecycle_stage: Cross-cutting
+- id: release-operational-readiness-factory
+  type: Lifecycle
+  lifecycle_stage: 5. Release & Operate
+- id: change-management-factory
+  type: Cross-cutting
+  lifecycle_stage: Cross-cutting
+- id: documentation-enablement-factory
+  type: Cross-cutting
+  lifecycle_stage: Cross-cutting
+- id: shared-assets-registries-platform
+  type: Shared platform
+  lifecycle_stage: Shared capability

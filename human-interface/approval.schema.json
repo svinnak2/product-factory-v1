@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Purpose: records a human decision on an immutable artifact version.",
+  "type": "object",
+  "required": [
+    "approval_id",
+    "initiative_id",
+    "artifact_id",
+    "artifact_version",
+    "decision",
+    "decided_by",
+    "decided_at"
+  ],
+  "properties": {
+    "approval_id": {
+      "type": "string"
+    },
+    "initiative_id": {
+      "type": "string"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "artifact_version": {
+      "type": "string"
+    },
+    "decision": {
+      "enum": [
+        "APPROVED",
+        "CHANGES_REQUESTED",
+        "REJECTED"
+      ]
+    },
+    "decided_by": {
+      "type": "string"
+    },
+    "decided_at": {
+      "type": "string"
+    },
+    "comments": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
